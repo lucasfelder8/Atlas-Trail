@@ -36,9 +36,9 @@ export function shareSquares(
 /** puzzleNumber null = practice puzzle. */
 export const HELPER_EMOJI = '💡';
 
-/** helped = the player used the "show matching countries" helper: a 💡 follows the squares. */
-export function shareText(puzzleNumber: number | null, guessCount: number, parValue: number, squares: string[], helped = false): string {
+/** helpers = how many hints the player looked up on the map: one 💡 each follows the squares. */
+export function shareText(puzzleNumber: number | null, guessCount: number, parValue: number, squares: string[], helpers = 0): string {
   const word = guessCount === 1 ? 'guess' : 'guesses';
   const title = puzzleNumber === null ? `${GAME_NAME} (practice)` : `${GAME_NAME} #${puzzleNumber}`;
-  return `${title} - ${guessCount} ${word} (par ${parValue})\n${squares.join('')}${helped ? ` ${HELPER_EMOJI}` : ''}${SHARE_URL ? `\n${SHARE_URL}` : ''}`;
+  return `${title} - ${guessCount} ${word} (par ${parValue})\n${squares.join('')}${helpers > 0 ? ` ${HELPER_EMOJI.repeat(helpers)}` : ''}${SHARE_URL ? `\n${SHARE_URL}` : ''}`;
 }

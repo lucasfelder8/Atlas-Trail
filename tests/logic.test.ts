@@ -8,7 +8,7 @@ import { buildHints, evaluateHint, revealedCount, leaksTarget, countriesMatching
 import { cardFor } from '../src/logic/infoCard.ts';
 import { shareSquares, shareText, par } from '../src/logic/scoring.ts';
 import { laDate, puzzleNumber, msUntilNextPuzzle, addDays } from '../src/logic/daily.ts';
-import { applyGuess, emptyStats, giveUp, useHelper, newGame, recordResult, displayStreak, averageGuesses, winRate } from '../src/logic/state.ts';
+import { applyGuess, emptyStats, giveUp, useHelper, helperCount, newGame, recordResult, displayStreak, averageGuesses, winRate } from '../src/logic/state.ts';
 import type { Country, CountryData, Facts, Puzzle } from '../src/logic/types.ts';
 import { GAME_NAME } from '../config/game.config.ts';
 
@@ -204,18 +204,21 @@ test('share squares: green on a shortest route, yellow for detours, last always 
 test('share text appends a lightbulb only when the helper was used', () => {
   const sq = ['🟩', '🟨', '🟩'];
   assert.equal(shareText(7, 3, 3, sq).split('\n')[1], '🟩🟨🟩');
-  assert.equal(shareText(7, 3, 3, sq, true).split('\n')[1], '🟩🟨🟩 💡');
+  assert.equal(shareText(7, 3, 3, sq, 1).split('\n')[1], '🟩🟨🟩 💡');
+  assert.equal(shareText(7, 3, 3, sq, 3).split('\n')[1], '🟩🟨🟩 💡💡💡');
 });
 
-test('using the helper marks the game, only while playing, and is recorded in results', () => {
+test('each distinct hint looked up costs one lightbulb; repeats are free; finished games cannot be marked', () => {
   const g0 = newGame(5, 'A', 'B');
-  assert.equal(g0.helped, undefined);
-  const g1 = useHelper(g0);
-  assert.equal(g1.helped, true);
-  assert.equal(useHelper(giveUp(g0)).helped, undefined, 'a finished game cannot be marked after the fact');
-  const won = applyGuess(g1, 'B');
-  assert.equal(recordResult(emptyStats(), won, 1).results[5].helped, true);
-  assert.equal(recordResult(emptyStats(), applyGuess(g0, 'B'), 1).results[5].helped, undefined);
+  assert.equal(helperCount(g0), 0);
+  const g1 = useHelper(useHelper(g0, 1), 1);
+  assert.equal(helperCount(g1), 1, 'same hint twice = one bulb');
+  const g2 = useHelper(g1, 2);
+  assert.equal(helperCount(g2), 2);
+  assert.equal(helperCount(useHelper(giveUp(g0), 1)), 0);
+  const won = applyGuess(g2, 'B');
+  assert.equal(recordResult(emptyStats(), won, 1).results[5].helpers, 2);
+  assert.equal(recordResult(emptyStats(), applyGuess(g0, 'B'), 1).results[5].helpers, undefined);
 });
 
 test('countriesMatching agrees with the card check marks and includes the target', () => {

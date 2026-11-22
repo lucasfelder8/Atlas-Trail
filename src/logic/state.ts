@@ -8,15 +8,16 @@ export interface GameState {
   target: string;
   guesses: string[];
   status: GameStatus;
-  /** True once the player opened the "show matching countries" map helper. Shown as 💡 when sharing. */
-  helped?: boolean;
+  /** Hint indices the player opened in the "show matching countries" map helper. One 💡 each when sharing. */
+  helpedHints?: number[];
 }
 
 export interface DayResult {
   status: 'won' | 'gaveup';
   guesses: number;
   par: number;
-  helped?: boolean;
+  /** Number of hints the player looked up on the map (💡 count). */
+  helpers?: number;
 }
 
 export interface Stats {
@@ -48,7 +49,11 @@ export function applyGuess(s: GameState, id: string): GameState {
 }
 
 /** Mark the game as played with the hint helper (permanent for this game). */
-export const useHelper = (s: GameState): GameState => (s.status === 'playing' && !s.helped ? { ...s, helped: true } : s);
+export const helperCount = (s: GameState) => s.helpedHints?.length ?? 0;
+
+/** Look up one hint on the map. Each distinct hint costs one 💡; viewing the same hint again is free. */
+export const useHelper = (s: GameState, hintIndex: number): GameState =>
+  s.status !== 'playing' || s.helpedHints?.includes(hintIndex) ? s : { ...s, helpedHints: [...(s.helpedHints ?? []), hintIndex] };
 
 export const giveUp = (s: GameState): GameState => (s.status === 'playing' ? { ...s, status: 'gaveup' } : s);
 
@@ -60,7 +65,7 @@ export function recordResult(st: Stats, game: GameState, parValue: number): Stat
   const next: Stats = {
     ...st,
     played: st.played + 1,
-    results: { ...st.results, [game.number]: { status: game.status, guesses: n, par: parValue, ...(game.helped ? { helped: true } : {}) } },
+    results: { ...st.results, [game.number]: { status: game.status, guesses: n, par: parValue, ...(helperCount(game) ? { helpers: helperCount(game) } : {}) } },
   };
   if (won) {
     next.wins = st.wins + 1;

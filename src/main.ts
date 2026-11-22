@@ -13,7 +13,7 @@ import { shareSquares, shareText, HELPER_EMOJI } from './logic/scoring.ts';
 import { laDate, puzzleNumber, msUntilNextPuzzle, formatCountdown } from './logic/daily.ts';
 import { eligibleTargets, pickPuzzle } from './logic/puzzleGen.ts';
 import {
-  applyGuess, giveUp, useHelper, newGame, recordResult, displayStreak, winRate, averageGuesses,
+  applyGuess, giveUp, useHelper, helperCount, newGame, recordResult, displayStreak, winRate, averageGuesses,
   type GameState, type Stats,
 } from './logic/state.ts';
 import { WorldMap } from './ui/map.ts';
@@ -184,7 +184,7 @@ async function main() {
     helperHint = i;
     helperSet = new Set(countriesMatching(hints[i], target, ctx));
     selected = null;
-    game = useHelper(game);
+    game = useHelper(game, i);
     persist();
     render();
     map.resetZoom(); // show the whole world so every highlighted country is visible
@@ -200,7 +200,11 @@ async function main() {
   function onHelperButton(i: number) {
     if (over()) return;
     if (helperHint === i) { stopHelper(); return; }
-    if (game.helped) { startHelper(i); return; }
+    if (game.helpedHints?.includes(i)) { startHelper(i); return; } // already paid for
+    const n = helperCount(game) + 1;
+    $('helper-cost').textContent = n === 1
+      ? 'Your shared result will get a 💡.'
+      : `You've already used ${n - 1}. Your shared result will get ${n} 💡.`;
     const dlg = $<HTMLDialogElement>('helper-dlg');
     dlg.returnValue = '';
     dlg.showModal();
@@ -367,7 +371,7 @@ async function main() {
   function showEnd() {
     const won = game.status === 'won';
     const squares = won ? shareSquares(g, game.start, game.target, game.guesses) : [];
-    const text = won ? shareText(practice ? null : number, game.guesses.length, puzzle.par, squares, !!game.helped) : '';
+    const text = won ? shareText(practice ? null : number, game.guesses.length, puzzle.par, squares, helperCount(game)) : '';
     const chips = (ids: string[]) => ids.map((id) => `<span class="c${id === game.target ? ' t' : ''}">${esc(nameOf(id))}</span>`).join(' → ');
     const k = game.guesses.length;
     $('end-body').innerHTML = `
@@ -376,8 +380,8 @@ async function main() {
         ? `<b>${k}</b> ${k === 1 ? 'guess' : 'guesses'} · par <b>${puzzle.par}</b>${k < puzzle.par ? ' · under par!' : k === puzzle.par ? ' · perfect route!' : ''}`
         : `The par route was <b>${puzzle.par}</b> guesses:`}</p>
       ${won ? '' : `<div class="end-route">${chips(parRoute())}</div>`}
-      ${won ? `<div class="share-preview" aria-label="Share preview">${squares.join('')}${game.helped ? ` ${HELPER_EMOJI}` : ''}</div>
-        ${game.helped ? `<p class="muted" style="margin:0 0 8px">${HELPER_EMOJI} You used the map helper, so your shared result is marked.</p>` : ''}
+      ${won ? `<div class="share-preview" aria-label="Share preview">${squares.join('')}${helperCount(game) ? ` ${HELPER_EMOJI.repeat(helperCount(game))}` : ''}</div>
+        ${helperCount(game) ? `<p class="muted" style="margin:0 0 8px">${HELPER_EMOJI} You looked up ${helperCount(game)} ${helperCount(game) === 1 ? 'hint' : 'hints'} on the map, so your shared result is marked.</p>` : ''}
         <button class="btn" id="share-btn">Share result</button>` : ''}
       ${practice ? '<p class="muted">Practice games don\'t count toward your stats.</p>' : statsHtml() + countdownHtml()}
       <div class="dlg-actions">
