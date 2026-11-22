@@ -1,0 +1,918 @@
+{
+ "status": "DRAFT",
+ "note": "DRAFT - every entry must be reviewed before launch. Entries with confidence 'low' (or 'medium') should be checked first. Each hint must be specific and well known, must not name the country or its capital, and must not be true of any other playable country.",
+ "entries": [
+  {
+   "alpha3": "AFG",
+   "name": "Afghanistan",
+   "hint": "Two giant Buddhas carved into the cliffs of Bamiyan stood here until 2001",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "ALB",
+   "name": "Albania",
+   "hint": "Its communist ruler Enver Hoxha built over 170,000 concrete bunkers across the land",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "DZA",
+   "name": "Algeria",
+   "hint": "Africa's largest country by area",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "AND",
+   "name": "Andorra",
+   "hint": "A Pyrenean co-principality whose joint heads of state are the French president and a Spanish bishop",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "AGO",
+   "name": "Angola",
+   "hint": "Its oil-rich exclave of Cabinda is cut off from the rest of the country by a strip of the DRC",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "ARG",
+   "name": "Argentina",
+   "hint": "Lionel Messi's homeland, where the Perito Moreno Glacier calves into a Patagonian lake",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "ARM",
+   "name": "Armenia",
+   "hint": "The first nation to adopt Christianity as its state religion, in 301 AD",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "AUT",
+   "name": "Austria",
+   "hint": "Mozart's birthplace, Salzburg, and the Habsburgs' Schönbrunn Palace",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "AZE",
+   "name": "Azerbaijan",
+   "hint": "The \"Land of Fire\": the Flame Towers and the ever-burning hillside of Yanar Dag",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "BGD",
+   "name": "Bangladesh",
+   "hint": "Known as East Pakistan until its 1971 war of independence",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "BLR",
+   "name": "Belarus",
+   "hint": "Ruled by Alexander Lukashenko since 1994",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "BEL",
+   "name": "Belgium",
+   "hint": "The Atomium, the Manneken Pis statue and the headquarters of the European Union",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "BLZ",
+   "name": "Belize",
+   "hint": "The Great Blue Hole, a giant marine sinkhole in the world's second-largest barrier reef",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "BEN",
+   "name": "Benin",
+   "hint": "Formerly the Kingdom of Dahomey, famed for its all-female warrior regiment",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "BTN",
+   "name": "Bhutan",
+   "hint": "Measures Gross National Happiness; the Tiger's Nest monastery clings to a cliff here",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "BOL",
+   "name": "Bolivia",
+   "hint": "The Salar de Uyuni, the world's largest salt flat",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "BIH",
+   "name": "Bosnia and Herzegovina",
+   "hint": "The rebuilt Stari Most bridge arches over the Neretva river in Mostar",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "BWA",
+   "name": "Botswana",
+   "hint": "The Okavango Delta floods out into the Kalahari Desert here",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "BRA",
+   "name": "Brazil",
+   "hint": "Christ the Redeemer looks down over Rio de Janeiro",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "BGR",
+   "name": "Bulgaria",
+   "hint": "The Rila Monastery and the Valley of Roses, source of much of the world's rose oil",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "BFA",
+   "name": "Burkina Faso",
+   "hint": "Hosts FESPACO, Africa's biggest film festival; formerly called Upper Volta",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "BDI",
+   "name": "Burundi",
+   "hint": "The \"Urundi\" half of the former Belgian territory of Ruanda-Urundi",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "KHM",
+   "name": "Cambodia",
+   "hint": "Angkor Wat, the largest religious monument in the world",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "CMR",
+   "name": "Cameroon",
+   "hint": "Nicknamed \"Africa in miniature\"; Samuel Eto'o's homeland",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "CAN",
+   "name": "Canada",
+   "hint": "The CN Tower in Toronto and the Rocky Mountain lakes of Banff",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "CAF",
+   "name": "Central African Republic",
+   "hint": "Jean-Bédel Bokassa crowned himself emperor here in a lavish 1977 ceremony",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "TCD",
+   "name": "Chad",
+   "hint": "The Ennedi Plateau's sandstone arches and the Tibesti Mountains rise from its Sahara",
+   "confidence": "medium"
+  },
+  {
+   "alpha3": "CHL",
+   "name": "Chile",
+   "hint": "Easter Island and its moai statues belong to it",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "CHN",
+   "name": "China",
+   "hint": "The Forbidden City and the Terracotta Army",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "COL",
+   "name": "Colombia",
+   "hint": "The walled old town of Cartagena and the birthplace of Gabriel García Márquez",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "COG",
+   "name": "Congo",
+   "hint": "Its capital faces Kinshasa across a river: the closest pair of capital cities in the world",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "CRI",
+   "name": "Costa Rica",
+   "hint": "Abolished its army in 1948; famous for \"pura vida\" and cloud forests like Monteverde",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "HRV",
+   "name": "Croatia",
+   "hint": "The walls of Dubrovnik and the waterfalls of Plitvice Lakes",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "CZE",
+   "name": "Czechia",
+   "hint": "Pilsner lager was born in its city of Plzeň",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "COD",
+   "name": "DRC",
+   "hint": "Formerly called Zaire",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "DNK",
+   "name": "Denmark",
+   "hint": "LEGO bricks were invented here, and Hans Christian Andersen was born here",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "DJI",
+   "name": "Djibouti",
+   "hint": "Lake Assal, the lowest point in Africa",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "ECU",
+   "name": "Ecuador",
+   "hint": "The Galápagos Islands belong to it",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "EGY",
+   "name": "Egypt",
+   "hint": "The pyramids of Giza stand here",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "SLV",
+   "name": "El Salvador",
+   "hint": "The smallest country in Central America and the only one with no Caribbean coast",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "GNQ",
+   "name": "Equatorial Guinea",
+   "hint": "Spanish is an official language, and its capital sits on the island of Bioko",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "ERI",
+   "name": "Eritrea",
+   "hint": "Its capital is famed for Italian Art Deco and Futurist buildings like the Fiat Tagliero garage",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "EST",
+   "name": "Estonia",
+   "hint": "Skype was developed here; a pioneer of e-residency and online voting",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "SWZ",
+   "name": "Eswatini",
+   "hint": "Formerly Swaziland; one of the world's last absolute monarchies",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "ETH",
+   "name": "Ethiopia",
+   "hint": "The rock-hewn churches of Lalibela",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "FIN",
+   "name": "Finland",
+   "hint": "Santa Claus Village in Rovaniemi on the Arctic Circle, and more saunas than cars",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "FRA",
+   "name": "France",
+   "hint": "The Eiffel Tower",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "GAB",
+   "name": "Gabon",
+   "hint": "Loango National Park's \"surfing hippos\"; ruled by the Bongo family for over 50 years",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "GMB",
+   "name": "Gambia",
+   "hint": "Mainland Africa's smallest country, a thin strip along one river surrounded by Senegal",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "GEO",
+   "name": "Georgia",
+   "hint": "The Gergeti Trinity Church below Mount Kazbek, and 8,000-year-old qvevri winemaking",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "DEU",
+   "name": "Germany",
+   "hint": "The Brandenburg Gate and Neuschwanstein Castle",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "GHA",
+   "name": "Ghana",
+   "hint": "Formerly the Gold Coast, the first sub-Saharan colony to win independence, in 1957",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "GRC",
+   "name": "Greece",
+   "hint": "The Parthenon on the Acropolis",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "GTM",
+   "name": "Guatemala",
+   "hint": "The Maya city of Tikal rises above its northern jungle",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "GIN",
+   "name": "Guinea",
+   "hint": "The Niger, Senegal and Gambia rivers all rise in its Fouta Djallon highlands",
+   "confidence": "medium"
+  },
+  {
+   "alpha3": "GNB",
+   "name": "Guinea-Bissau",
+   "hint": "The Bijagós Archipelago, where hippos swim in the sea",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "GUY",
+   "name": "Guyana",
+   "hint": "Kaieteur Falls; the only South American country with English as its official language",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "HND",
+   "name": "Honduras",
+   "hint": "The Maya ruins of Copán and the Bay Island of Roatán",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "HKG",
+   "name": "Hong Kong",
+   "hint": "The Star Ferry crosses its harbour; Britain handed it back in 1997",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "HUN",
+   "name": "Hungary",
+   "hint": "The Rubik's Cube was invented here; its Parliament building lines the Danube",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "IND",
+   "name": "India",
+   "hint": "The Taj Mahal",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "IRN",
+   "name": "Iran",
+   "hint": "The ruins of Persepolis, ceremonial capital of the ancient Persian Empire",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "IRQ",
+   "name": "Iraq",
+   "hint": "The ruins of Babylon",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "ISR",
+   "name": "Israel",
+   "hint": "The desert fortress of Masada above the Dead Sea",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "ITA",
+   "name": "Italy",
+   "hint": "The Colosseum",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "CIV",
+   "name": "Ivory Coast",
+   "hint": "The Basilica of Our Lady of Peace, one of the largest churches in the world",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "JOR",
+   "name": "Jordan",
+   "hint": "Petra, the rose-red city carved into rock",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "KAZ",
+   "name": "Kazakhstan",
+   "hint": "The Baikonur Cosmodrome, from which Yuri Gagarin launched into space",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "KEN",
+   "name": "Kenya",
+   "hint": "The Maasai Mara, stage of the Great Migration's river crossings",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "UNK",
+   "name": "Kosovo",
+   "hint": "Europe's youngest country, declaring independence from Serbia in 2008",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "KWT",
+   "name": "Kuwait",
+   "hint": "Iraq's 1990 invasion of it set off the Gulf War",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "KGZ",
+   "name": "Kyrgyzstan",
+   "hint": "Issyk-Kul, a vast alpine lake that never freezes",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "LAO",
+   "name": "Laos",
+   "hint": "The Plain of Jars; the most heavily bombed country per person in history",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "LVA",
+   "name": "Latvia",
+   "hint": "Its capital has the largest collection of Art Nouveau buildings in Europe",
+   "confidence": "medium"
+  },
+  {
+   "alpha3": "LBN",
+   "name": "Lebanon",
+   "hint": "The Roman temples of Baalbek, and a cedar tree on its flag",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "LSO",
+   "name": "Lesotho",
+   "hint": "The \"Kingdom in the Sky\", completely surrounded by South Africa",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "LBR",
+   "name": "Liberia",
+   "hint": "Founded by freed American slaves; Africa's oldest republic",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "LBY",
+   "name": "Libya",
+   "hint": "Ruled by Muammar Gaddafi for 42 years",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "LIE",
+   "name": "Liechtenstein",
+   "hint": "An Alpine principality between Switzerland and Austria; the world's largest maker of false teeth",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "LTU",
+   "name": "Lithuania",
+   "hint": "The Hill of Crosses",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "LUX",
+   "name": "Luxembourg",
+   "hint": "The world's only remaining grand duchy",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "MAC",
+   "name": "Macau",
+   "hint": "The ruined façade of St. Paul's and the world's biggest casino earnings; Portugal handed it back in 1999",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "MWI",
+   "name": "Malawi",
+   "hint": "Nicknamed \"the Warm Heart of Africa\"",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "MYS",
+   "name": "Malaysia",
+   "hint": "The Petronas Twin Towers",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "MLI",
+   "name": "Mali",
+   "hint": "Timbuktu and the Great Mosque of Djenné, the world's largest mud-brick building",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "MRT",
+   "name": "Mauritania",
+   "hint": "The \"Eye of the Sahara\" (Richat Structure), and iron-ore trains among the longest in the world",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "MEX",
+   "name": "Mexico",
+   "hint": "The Maya pyramid of Chichén Itzá",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "MDA",
+   "name": "Moldova",
+   "hint": "Mileștii Mici, the world's largest wine cellar",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "MCO",
+   "name": "Monaco",
+   "hint": "The Monte Carlo casino and a Formula 1 street circuit",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "MNG",
+   "name": "Mongolia",
+   "hint": "Genghis Khan's homeland, with a giant steel statue of him on horseback",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "MNE",
+   "name": "Montenegro",
+   "hint": "The fjord-like Bay of Kotor",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "MAR",
+   "name": "Morocco",
+   "hint": "The medina of Fez and the Jemaa el-Fnaa square in Marrakesh",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "MOZ",
+   "name": "Mozambique",
+   "hint": "The only national flag with an AK-47 rifle on it",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "MMR",
+   "name": "Myanmar",
+   "hint": "The golden Shwedagon Pagoda and the temple plain of Bagan",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "NAM",
+   "name": "Namibia",
+   "hint": "The red dunes of Sossusvlei and the shipwrecks of the Skeleton Coast",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "NPL",
+   "name": "Nepal",
+   "hint": "The only national flag that is not a rectangle; Buddha's birthplace, Lumbini",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "NLD",
+   "name": "Netherlands",
+   "hint": "The windmills of Kinderdijk and spring tulip fields",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "NIC",
+   "name": "Nicaragua",
+   "hint": "Central America's largest country; Ometepe's twin volcanoes rise from its great lake",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "NER",
+   "name": "Niger",
+   "hint": "The Aïr Mountains and the Ténéré desert, where the lone \"Tree of Ténéré\" once stood",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "NGA",
+   "name": "Nigeria",
+   "hint": "Africa's most populous country and home of \"Nollywood\"",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "PRK",
+   "name": "North Korea",
+   "hint": "Ruled by three generations of the Kim dynasty under the Juche ideology",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "MKD",
+   "name": "North Macedonia",
+   "hint": "Mother Teresa was born in its capital; renamed in 2019 to settle a dispute with Greece",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "NOR",
+   "name": "Norway",
+   "hint": "The fjords of Geirangerfjord and the fishing villages of the Lofoten Islands",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "OMN",
+   "name": "Oman",
+   "hint": "Ruled by Sultan Qaboos for 50 years; Dhofar's frankincense trees",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "PAK",
+   "name": "Pakistan",
+   "hint": "Founded in 1947 by Muhammad Ali Jinnah",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "PSE",
+   "name": "Palestine",
+   "hint": "Bethlehem, the birthplace of Jesus, and the Gaza Strip",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "PAN",
+   "name": "Panama",
+   "hint": "A famous canal links the Atlantic and the Pacific through it",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "PRY",
+   "name": "Paraguay",
+   "hint": "Its flag has a different emblem on the front and the back",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "PER",
+   "name": "Peru",
+   "hint": "Machu Picchu",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "POL",
+   "name": "Poland",
+   "hint": "The Wieliczka Salt Mine and the Auschwitz memorial",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "PRT",
+   "name": "Portugal",
+   "hint": "The Belém Tower, and Cristiano Ronaldo's birthplace",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "QAT",
+   "name": "Qatar",
+   "hint": "Hosted the 2022 FIFA World Cup",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "ROU",
+   "name": "Romania",
+   "hint": "Bran Castle in Transylvania, linked to the Dracula legend",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "RUS",
+   "name": "Russia",
+   "hint": "Red Square and St. Basil's Cathedral",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "RWA",
+   "name": "Rwanda",
+   "hint": "The \"land of a thousand hills\"; mountain gorillas in Volcanoes National Park",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "SMR",
+   "name": "San Marino",
+   "hint": "One of the world's oldest republics, perched on Mount Titano",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "SAU",
+   "name": "Saudi Arabia",
+   "hint": "Mecca and Medina, the holiest cities of Islam",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "SEN",
+   "name": "Senegal",
+   "hint": "The Pink Lake (Lac Retba) and Gorée Island",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "SRB",
+   "name": "Serbia",
+   "hint": "Novak Djokovic's homeland and the EXIT music festival in Novi Sad",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "SLE",
+   "name": "Sierra Leone",
+   "hint": "The setting of the \"blood diamond\" civil war of the 1990s",
+   "confidence": "medium"
+  },
+  {
+   "alpha3": "SVK",
+   "name": "Slovakia",
+   "hint": "Spiš Castle, one of the largest castle complexes in Central Europe",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "SVN",
+   "name": "Slovenia",
+   "hint": "Lake Bled and its island church",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "SOM",
+   "name": "Somalia",
+   "hint": "The longest coastline of any country in mainland Africa, on the Horn of Africa",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "ZAF",
+   "name": "South Africa",
+   "hint": "Table Mountain and Robben Island, where Nelson Mandela was imprisoned",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "KOR",
+   "name": "South Korea",
+   "hint": "Home of K-pop, Samsung and Hyundai",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "SSD",
+   "name": "South Sudan",
+   "hint": "The world's newest country, independent since 2011",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "ESP",
+   "name": "Spain",
+   "hint": "Gaudí's Sagrada Família basilica",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "SDN",
+   "name": "Sudan",
+   "hint": "More ancient pyramids than Egypt, at Meroë",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "SUR",
+   "name": "Suriname",
+   "hint": "South America's smallest country; Dutch is the official language",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "SWE",
+   "name": "Sweden",
+   "hint": "Home of IKEA, ABBA and the Ice Hotel at Jukkasjärvi",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "CHE",
+   "name": "Switzerland",
+   "hint": "The Red Cross was founded here; famous for neutrality, banks and watches",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "SYR",
+   "name": "Syria",
+   "hint": "The ancient desert city of Palmyra",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "TJK",
+   "name": "Tajikistan",
+   "hint": "The Pamir Highway; over 90% of the land is mountains",
+   "confidence": "medium"
+  },
+  {
+   "alpha3": "TZA",
+   "name": "Tanzania",
+   "hint": "Mount Kilimanjaro and the spice island of Zanzibar",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "THA",
+   "name": "Thailand",
+   "hint": "The Emerald Buddha in the Grand Palace; the only Southeast Asian country never colonized",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "TGO",
+   "name": "Togo",
+   "hint": "One of Africa's narrowest countries, with about 50 km of coast between Ghana and Benin",
+   "confidence": "medium"
+  },
+  {
+   "alpha3": "TUN",
+   "name": "Tunisia",
+   "hint": "The ruins of Carthage and the desert sets of Star Wars' Tatooine",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "TUR",
+   "name": "Turkey",
+   "hint": "Hagia Sophia and Cappadocia's hot-air balloons",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "TKM",
+   "name": "Turkmenistan",
+   "hint": "The Darvaza gas crater, nicknamed the \"Door to Hell\"",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "UGA",
+   "name": "Uganda",
+   "hint": "The White Nile begins its journey at Jinja",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "UKR",
+   "name": "Ukraine",
+   "hint": "The Chernobyl exclusion zone",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "ARE",
+   "name": "United Arab Emirates",
+   "hint": "The Burj Khalifa, the world's tallest building",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "USA",
+   "name": "United States",
+   "hint": "The Statue of Liberty and the Grand Canyon",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "URY",
+   "name": "Uruguay",
+   "hint": "Won the first FIFA World Cup, as host, in 1930",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "UZB",
+   "name": "Uzbekistan",
+   "hint": "The Registan of Samarkand",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "VAT",
+   "name": "Vatican City",
+   "hint": "Home of the pope",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "VEN",
+   "name": "Venezuela",
+   "hint": "Angel Falls, the world's highest uninterrupted waterfall",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "VNM",
+   "name": "Vietnam",
+   "hint": "The limestone islands of Ha Long Bay",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "ESH",
+   "name": "Western Sahara",
+   "hint": "Divided by a 2,700 km sand wall between Morocco and the Polisario Front",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "YEM",
+   "name": "Yemen",
+   "hint": "Shibam's mud-brick skyscrapers and Socotra's dragon blood trees",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "ZMB",
+   "name": "Zambia",
+   "hint": "Formerly Northern Rhodesia; the heart of Africa's Copperbelt",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "ZWE",
+   "name": "Zimbabwe",
+   "hint": "Formerly Rhodesia; named after the great medieval stone city whose ruins stand here",
+   "confidence": "high"
+  }
+ ]
+}

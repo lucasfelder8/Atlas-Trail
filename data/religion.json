@@ -1,0 +1,1070 @@
+{
+ "status": "DRAFT",
+ "note": "DRAFT - every entry must be reviewed before launch. Entries with confidence 'low' (or 'medium') should be checked first. basis: 'official' = constitutionally/legally declared official religion; 'majority' = one religion followed by roughly half or more; 'none' = neither (religion then records the largest group, for reference only).",
+ "entries": [
+  {
+   "alpha3": "AFG",
+   "name": "Afghanistan",
+   "religion": "Islam",
+   "basis": "official",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "ALB",
+   "name": "Albania",
+   "religion": "Islam",
+   "basis": "majority",
+   "confidence": "low"
+  },
+  {
+   "alpha3": "DZA",
+   "name": "Algeria",
+   "religion": "Islam",
+   "basis": "official",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "AND",
+   "name": "Andorra",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "medium"
+  },
+  {
+   "alpha3": "AGO",
+   "name": "Angola",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "ARG",
+   "name": "Argentina",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "medium"
+  },
+  {
+   "alpha3": "ARM",
+   "name": "Armenia",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "medium"
+  },
+  {
+   "alpha3": "AUT",
+   "name": "Austria",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "AZE",
+   "name": "Azerbaijan",
+   "religion": "Islam",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "BGD",
+   "name": "Bangladesh",
+   "religion": "Islam",
+   "basis": "official",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "BLR",
+   "name": "Belarus",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "BEL",
+   "name": "Belgium",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "medium"
+  },
+  {
+   "alpha3": "BLZ",
+   "name": "Belize",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "BEN",
+   "name": "Benin",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "low"
+  },
+  {
+   "alpha3": "BTN",
+   "name": "Bhutan",
+   "religion": "Buddhism",
+   "basis": "majority",
+   "confidence": "low"
+  },
+  {
+   "alpha3": "BOL",
+   "name": "Bolivia",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "BIH",
+   "name": "Bosnia and Herzegovina",
+   "religion": "Islam",
+   "basis": "majority",
+   "confidence": "medium"
+  },
+  {
+   "alpha3": "BWA",
+   "name": "Botswana",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "BRA",
+   "name": "Brazil",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "BGR",
+   "name": "Bulgaria",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "medium"
+  },
+  {
+   "alpha3": "BFA",
+   "name": "Burkina Faso",
+   "religion": "Islam",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "BDI",
+   "name": "Burundi",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "KHM",
+   "name": "Cambodia",
+   "religion": "Buddhism",
+   "basis": "official",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "CMR",
+   "name": "Cameroon",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "CAN",
+   "name": "Canada",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "medium"
+  },
+  {
+   "alpha3": "CAF",
+   "name": "Central African Republic",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "TCD",
+   "name": "Chad",
+   "religion": "Islam",
+   "basis": "majority",
+   "confidence": "medium"
+  },
+  {
+   "alpha3": "CHL",
+   "name": "Chile",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "CHN",
+   "name": "China",
+   "religion": "Unaffiliated",
+   "basis": "majority",
+   "confidence": "medium"
+  },
+  {
+   "alpha3": "COL",
+   "name": "Colombia",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "COG",
+   "name": "Congo",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "CRI",
+   "name": "Costa Rica",
+   "religion": "Christianity",
+   "basis": "official",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "HRV",
+   "name": "Croatia",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "CZE",
+   "name": "Czechia",
+   "religion": "Unaffiliated",
+   "basis": "majority",
+   "confidence": "low"
+  },
+  {
+   "alpha3": "COD",
+   "name": "DRC",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "DNK",
+   "name": "Denmark",
+   "religion": "Christianity",
+   "basis": "official",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "DJI",
+   "name": "Djibouti",
+   "religion": "Islam",
+   "basis": "official",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "ECU",
+   "name": "Ecuador",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "EGY",
+   "name": "Egypt",
+   "religion": "Islam",
+   "basis": "official",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "SLV",
+   "name": "El Salvador",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "GNQ",
+   "name": "Equatorial Guinea",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "ERI",
+   "name": "Eritrea",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "low"
+  },
+  {
+   "alpha3": "EST",
+   "name": "Estonia",
+   "religion": "Unaffiliated",
+   "basis": "majority",
+   "confidence": "medium"
+  },
+  {
+   "alpha3": "SWZ",
+   "name": "Eswatini",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "ETH",
+   "name": "Ethiopia",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "FIN",
+   "name": "Finland",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "low"
+  },
+  {
+   "alpha3": "FRA",
+   "name": "France",
+   "religion": "Christianity",
+   "basis": "none",
+   "confidence": "low"
+  },
+  {
+   "alpha3": "GAB",
+   "name": "Gabon",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "GMB",
+   "name": "Gambia",
+   "religion": "Islam",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "GEO",
+   "name": "Georgia",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "DEU",
+   "name": "Germany",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "low"
+  },
+  {
+   "alpha3": "GHA",
+   "name": "Ghana",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "GRC",
+   "name": "Greece",
+   "religion": "Christianity",
+   "basis": "official",
+   "confidence": "medium"
+  },
+  {
+   "alpha3": "GTM",
+   "name": "Guatemala",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "GIN",
+   "name": "Guinea",
+   "religion": "Islam",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "GNB",
+   "name": "Guinea-Bissau",
+   "religion": "Islam",
+   "basis": "majority",
+   "confidence": "low"
+  },
+  {
+   "alpha3": "GUY",
+   "name": "Guyana",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "HND",
+   "name": "Honduras",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "HKG",
+   "name": "Hong Kong",
+   "religion": "Unaffiliated",
+   "basis": "majority",
+   "confidence": "low"
+  },
+  {
+   "alpha3": "HUN",
+   "name": "Hungary",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "low"
+  },
+  {
+   "alpha3": "IND",
+   "name": "India",
+   "religion": "Hinduism",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "IRN",
+   "name": "Iran",
+   "religion": "Islam",
+   "basis": "official",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "IRQ",
+   "name": "Iraq",
+   "religion": "Islam",
+   "basis": "official",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "ISR",
+   "name": "Israel",
+   "religion": "Judaism",
+   "basis": "majority",
+   "confidence": "medium"
+  },
+  {
+   "alpha3": "ITA",
+   "name": "Italy",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "CIV",
+   "name": "Ivory Coast",
+   "religion": "Islam",
+   "basis": "none",
+   "confidence": "medium"
+  },
+  {
+   "alpha3": "JOR",
+   "name": "Jordan",
+   "religion": "Islam",
+   "basis": "official",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "KAZ",
+   "name": "Kazakhstan",
+   "religion": "Islam",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "KEN",
+   "name": "Kenya",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "UNK",
+   "name": "Kosovo",
+   "religion": "Islam",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "KWT",
+   "name": "Kuwait",
+   "religion": "Islam",
+   "basis": "official",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "KGZ",
+   "name": "Kyrgyzstan",
+   "religion": "Islam",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "LAO",
+   "name": "Laos",
+   "religion": "Buddhism",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "LVA",
+   "name": "Latvia",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "medium"
+  },
+  {
+   "alpha3": "LBN",
+   "name": "Lebanon",
+   "religion": "Islam",
+   "basis": "majority",
+   "confidence": "low"
+  },
+  {
+   "alpha3": "LSO",
+   "name": "Lesotho",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "LBR",
+   "name": "Liberia",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "LBY",
+   "name": "Libya",
+   "religion": "Islam",
+   "basis": "official",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "LIE",
+   "name": "Liechtenstein",
+   "religion": "Christianity",
+   "basis": "official",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "LTU",
+   "name": "Lithuania",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "LUX",
+   "name": "Luxembourg",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "medium"
+  },
+  {
+   "alpha3": "MAC",
+   "name": "Macau",
+   "religion": "Folk/Traditional",
+   "basis": "none",
+   "confidence": "low"
+  },
+  {
+   "alpha3": "MWI",
+   "name": "Malawi",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "MYS",
+   "name": "Malaysia",
+   "religion": "Islam",
+   "basis": "official",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "MLI",
+   "name": "Mali",
+   "religion": "Islam",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "MRT",
+   "name": "Mauritania",
+   "religion": "Islam",
+   "basis": "official",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "MEX",
+   "name": "Mexico",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "MDA",
+   "name": "Moldova",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "MCO",
+   "name": "Monaco",
+   "religion": "Christianity",
+   "basis": "official",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "MNG",
+   "name": "Mongolia",
+   "religion": "Buddhism",
+   "basis": "majority",
+   "confidence": "medium"
+  },
+  {
+   "alpha3": "MNE",
+   "name": "Montenegro",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "MAR",
+   "name": "Morocco",
+   "religion": "Islam",
+   "basis": "official",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "MOZ",
+   "name": "Mozambique",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "MMR",
+   "name": "Myanmar",
+   "religion": "Buddhism",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "NAM",
+   "name": "Namibia",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "NPL",
+   "name": "Nepal",
+   "religion": "Hinduism",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "NLD",
+   "name": "Netherlands",
+   "religion": "Unaffiliated",
+   "basis": "majority",
+   "confidence": "medium"
+  },
+  {
+   "alpha3": "NIC",
+   "name": "Nicaragua",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "NER",
+   "name": "Niger",
+   "religion": "Islam",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "NGA",
+   "name": "Nigeria",
+   "religion": "Islam",
+   "basis": "none",
+   "confidence": "medium"
+  },
+  {
+   "alpha3": "PRK",
+   "name": "North Korea",
+   "religion": "Unaffiliated",
+   "basis": "majority",
+   "confidence": "low"
+  },
+  {
+   "alpha3": "MKD",
+   "name": "North Macedonia",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "NOR",
+   "name": "Norway",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "medium"
+  },
+  {
+   "alpha3": "OMN",
+   "name": "Oman",
+   "religion": "Islam",
+   "basis": "official",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "PAK",
+   "name": "Pakistan",
+   "religion": "Islam",
+   "basis": "official",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "PSE",
+   "name": "Palestine",
+   "religion": "Islam",
+   "basis": "official",
+   "confidence": "medium"
+  },
+  {
+   "alpha3": "PAN",
+   "name": "Panama",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "PRY",
+   "name": "Paraguay",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "PER",
+   "name": "Peru",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "POL",
+   "name": "Poland",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "PRT",
+   "name": "Portugal",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "QAT",
+   "name": "Qatar",
+   "religion": "Islam",
+   "basis": "official",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "ROU",
+   "name": "Romania",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "RUS",
+   "name": "Russia",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "medium"
+  },
+  {
+   "alpha3": "RWA",
+   "name": "Rwanda",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "SMR",
+   "name": "San Marino",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "SAU",
+   "name": "Saudi Arabia",
+   "religion": "Islam",
+   "basis": "official",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "SEN",
+   "name": "Senegal",
+   "religion": "Islam",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "SRB",
+   "name": "Serbia",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "SLE",
+   "name": "Sierra Leone",
+   "religion": "Islam",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "SVK",
+   "name": "Slovakia",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "SVN",
+   "name": "Slovenia",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "medium"
+  },
+  {
+   "alpha3": "SOM",
+   "name": "Somalia",
+   "religion": "Islam",
+   "basis": "official",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "ZAF",
+   "name": "South Africa",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "KOR",
+   "name": "South Korea",
+   "religion": "Unaffiliated",
+   "basis": "majority",
+   "confidence": "medium"
+  },
+  {
+   "alpha3": "SSD",
+   "name": "South Sudan",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "ESP",
+   "name": "Spain",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "medium"
+  },
+  {
+   "alpha3": "SDN",
+   "name": "Sudan",
+   "religion": "Islam",
+   "basis": "majority",
+   "confidence": "medium"
+  },
+  {
+   "alpha3": "SUR",
+   "name": "Suriname",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "medium"
+  },
+  {
+   "alpha3": "SWE",
+   "name": "Sweden",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "low"
+  },
+  {
+   "alpha3": "CHE",
+   "name": "Switzerland",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "SYR",
+   "name": "Syria",
+   "religion": "Islam",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "TJK",
+   "name": "Tajikistan",
+   "religion": "Islam",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "TZA",
+   "name": "Tanzania",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "medium"
+  },
+  {
+   "alpha3": "THA",
+   "name": "Thailand",
+   "religion": "Buddhism",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "TGO",
+   "name": "Togo",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "low"
+  },
+  {
+   "alpha3": "TUN",
+   "name": "Tunisia",
+   "religion": "Islam",
+   "basis": "official",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "TUR",
+   "name": "Turkey",
+   "religion": "Islam",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "TKM",
+   "name": "Turkmenistan",
+   "religion": "Islam",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "UGA",
+   "name": "Uganda",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "UKR",
+   "name": "Ukraine",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "ARE",
+   "name": "United Arab Emirates",
+   "religion": "Islam",
+   "basis": "official",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "USA",
+   "name": "United States",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "URY",
+   "name": "Uruguay",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "low"
+  },
+  {
+   "alpha3": "UZB",
+   "name": "Uzbekistan",
+   "religion": "Islam",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "VAT",
+   "name": "Vatican City",
+   "religion": "Christianity",
+   "basis": "official",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "VEN",
+   "name": "Venezuela",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "VNM",
+   "name": "Vietnam",
+   "religion": "Folk/Traditional",
+   "basis": "none",
+   "confidence": "low"
+  },
+  {
+   "alpha3": "ESH",
+   "name": "Western Sahara",
+   "religion": "Islam",
+   "basis": "majority",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "YEM",
+   "name": "Yemen",
+   "religion": "Islam",
+   "basis": "official",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "ZMB",
+   "name": "Zambia",
+   "religion": "Christianity",
+   "basis": "official",
+   "confidence": "high"
+  },
+  {
+   "alpha3": "ZWE",
+   "name": "Zimbabwe",
+   "religion": "Christianity",
+   "basis": "majority",
+   "confidence": "high"
+  }
+ ]
+}

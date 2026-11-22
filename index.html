@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f4f1ea" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#14181d" media="(prefers-color-scheme: dark)" />
+    <title>%GAME_NAME%: a daily geography puzzle</title>
+    <meta name="description" content="Find the hidden country one border at a time. A new geography puzzle every day." />
+    <meta property="og:title" content="%GAME_NAME%" />
+    <meta property="og:description" content="Find the hidden country one border at a time. A new geography puzzle every day." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <h1>%GAME_NAME% <span id="puzzle-no" class="muted"></span></h1>
+        <div class="topbar-actions">
+          <button id="mode-btn" class="chip mode"></button>
+          <button id="help-btn" class="icon-btn" aria-label="How to play">?</button>
+          <button id="stats-btn" class="icon-btn" aria-label="Statistics">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <aside class="side">
+        <section class="hints" aria-label="Hints about the destination">
+          <button id="hints-toggle" class="hints-head" aria-expanded="true" aria-controls="hint-list">
+            <span class="hints-title">Hints about the destination</span>
+            <span class="hints-meta"><span id="hint-count"></span><span class="chev" aria-hidden="true">▾</span></span>
+          </button>
+          <ol id="hint-list"></ol>
+        </section>
+
+        <div id="alert" class="alert" role="status" hidden>
+          <span class="alert-dot" aria-hidden="true"></span> <span id="alert-text"></span>
+        </div>
+      </aside>
+
+      <main id="map" class="map">
+        <div class="map-controls">
+          <button id="focus-btn" class="chip">My region</button>
+          <button id="world-btn" class="chip">World</button>
+        </div>
+        <div id="toast" class="toast" role="status" aria-live="assertive"></div>
+        <button id="hint-reveal" class="hint-reveal" aria-live="polite" hidden></button>
+        <div class="legend" aria-hidden="true">Your countries: fewer <i style="background:var(--g0)"></i><i style="background:var(--g1)"></i><i style="background:var(--g2)"></i><i style="background:var(--g3)"></i><i style="background:var(--g4)"></i> more hints match</div>
+      </main>
+
+      <section id="card" class="card" aria-live="polite" aria-hidden="true"></section>
+
+      <footer class="bottombar">
+        <div class="progress">
+          <span class="from">From <strong id="start-name"></strong></span>
+          <span id="guess-count" class="muted"></span>
+        </div>
+        <button id="giveup-btn" class="link-btn">Give up</button>
+        <button id="results-btn" class="btn small" hidden>See results</button>
+        <button id="new-practice-btn" class="btn small" hidden>New puzzle</button>
+      </footer>
+    </div>
+
+    <dialog id="confirm-dlg">
+      <form method="dialog">
+        <h2>Give up?</h2>
+        <p id="confirm-text">This ends today's game.</p>
+        <div class="dlg-actions">
+          <button value="cancel" class="btn secondary">Keep playing</button>
+          <button value="ok" class="btn danger">Give up</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="end-dlg" aria-labelledby="end-title">
+      <button class="dlg-close" data-close aria-label="Close">×</button>
+      <div id="end-body"></div>
+    </dialog>
+    <dialog id="stats-dlg" aria-labelledby="stats-title">
+      <button class="dlg-close" data-close aria-label="Close">×</button>
+      <div id="stats-body"></div>
+    </dialog>
+
+    <dialog id="practice-dlg" aria-labelledby="practice-title">
+      <button class="dlg-close" data-close aria-label="Close">×</button>
+      <h2 id="practice-title">New practice puzzle</h2>
+      <p class="muted" style="margin-top:0">Practice puzzles are random and never affect your daily stats or streak.</p>
+      <div class="difficulty">
+        <button class="btn secondary" data-difficulty="easy"><b>Easy</b><span>par 3–4</span></button>
+        <button class="btn secondary" data-difficulty="medium"><b>Medium</b><span>par 5–6</span></button>
+        <button class="btn secondary" data-difficulty="hard"><b>Hard</b><span>par 7–8</span></button>
+        <button class="btn secondary" data-difficulty="any"><b>Surprise me</b><span>par 3–8</span></button>
+      </div>
+    </dialog>
+
+    <dialog id="help-dlg" aria-labelledby="help-title">
+      <button class="dlg-close" data-close aria-label="Close">×</button>
+      <h2 id="help-title">How to play %GAME_NAME%</h2>
+      <ol class="help">
+        <li>Find today's hidden <strong>destination country</strong>. You start from the green country.</li>
+        <li>Tap any country touching your green region, then press <strong>Guess</strong> to add it.</li>
+        <li>Every guess unlocks a new <strong>hint</strong> about the destination. The last hint is a famous landmark.</li>
+        <li>Tap a country to compare it with the hints: <span class="ok">✓</span> it shares that fact with the destination, <span class="no">✗</span> it doesn't.</li>
+        <li>An orange banner and outline appear when the destination touches one of your countries. The dotted lines on the map are the equator and the tropics.</li>
+        <li>Fewer guesses is better. <strong>Par</strong> is the shortest possible route. A new puzzle every midnight (Pacific time).</li>
+      </ol>
+      <form method="dialog" class="dlg-actions"><button class="btn">Let's go</button></form>
+    </dialog>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
