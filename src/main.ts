@@ -184,7 +184,7 @@ async function main() {
     helperHint = i;
     helperSet = new Set(countriesMatching(hints[i], target, ctx));
     selected = null;
-    game = useHelper(game, i);
+    game = useHelper(game, i); // no-op once the game is over: looking afterwards is free
     persist();
     render();
     map.resetZoom(); // show the whole world so every highlighted country is visible
@@ -194,12 +194,12 @@ async function main() {
     helperHint = null;
     helperSet = new Set();
     render();
-    map.zoomTo([...visited(), ...(g.get(game.start) ?? [])]);
+    if (over()) zoomToResult(); else map.zoomTo([...visited(), ...(g.get(game.start) ?? [])]);
   }
   /** Tap 💡 on a hint: confirm the first time (it marks the result), then show the matching countries. */
   function onHelperButton(i: number) {
-    if (over()) return;
     if (helperHint === i) { stopHelper(); return; }
+    if (over()) { startHelper(i); return; } // game finished: free, and the share text is already fixed
     if (game.helpedHints?.includes(i)) { startHelper(i); return; } // already paid for
     const n = helperCount(game) + 1;
     $('helper-cost').textContent = n === 1
@@ -267,7 +267,7 @@ async function main() {
 
   function renderHelperBar() {
     const bar = $('helper-bar');
-    bar.hidden = helperHint === null || over();
+    bar.hidden = helperHint === null;
     if (bar.hidden) return;
     $('helper-title').textContent = hints[helperHint!].text;
     const n = helperSet.size;
@@ -279,8 +279,9 @@ async function main() {
     const items = revealed.map((h, i) => {
       const isNew = fresh && i >= shownHints;
       const cls = ['hint', h.kind === 'landmark' ? 'landmark' : '', isNew ? 'new' : '', i === n - 1 ? 'latest' : ''].join(' ');
-      const helper = !over() && canShowOnMap(h)
-        ? `<button class="helper-btn" data-helper="${i}" aria-pressed="${helperHint === i}" aria-label="${helperHint === i ? 'Hide' : 'Show'} countries that fit: ${esc(h.text)}">💡 ${helperHint === i ? 'Hide' : 'Map'}</button>`
+      const paid = game.helpedHints?.includes(i);
+      const helper = canShowOnMap(h)
+        ? `<button class="helper-btn${paid ? ' paid' : ''}" title="${paid ? 'You used this lightbulb' : ''}" data-helper="${i}" aria-pressed="${helperHint === i}" aria-label="${helperHint === i ? 'Hide' : 'Show'} countries that fit: ${esc(h.text)}">💡 ${helperHint === i ? 'Hide' : 'Map'}${paid && over() ? ' · used' : ''}</button>`
         : '';
       return `<li class="${cls}"><span class="ico" aria-hidden="true">${HINT_ICONS[h.kind]}</span>
         <span class="txt">${hintHtml(h)}</span>${isNew ? '<span class="badge">NEW</span>' : ''}${helper}</li>`;
