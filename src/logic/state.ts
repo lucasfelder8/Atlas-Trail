@@ -8,12 +8,15 @@ export interface GameState {
   target: string;
   guesses: string[];
   status: GameStatus;
+  /** True once the player opened the "show matching countries" map helper. Shown as 💡 when sharing. */
+  helped?: boolean;
 }
 
 export interface DayResult {
   status: 'won' | 'gaveup';
   guesses: number;
   par: number;
+  helped?: boolean;
 }
 
 export interface Stats {
@@ -44,6 +47,9 @@ export function applyGuess(s: GameState, id: string): GameState {
   return { ...s, guesses, status: id === s.target ? 'won' : 'playing' };
 }
 
+/** Mark the game as played with the hint helper (permanent for this game). */
+export const useHelper = (s: GameState): GameState => (s.status === 'playing' && !s.helped ? { ...s, helped: true } : s);
+
 export const giveUp = (s: GameState): GameState => (s.status === 'playing' ? { ...s, status: 'gaveup' } : s);
 
 /** Record a finished game into stats. Idempotent per puzzle number. */
@@ -54,7 +60,7 @@ export function recordResult(st: Stats, game: GameState, parValue: number): Stat
   const next: Stats = {
     ...st,
     played: st.played + 1,
-    results: { ...st.results, [game.number]: { status: game.status, guesses: n, par: parValue } },
+    results: { ...st.results, [game.number]: { status: game.status, guesses: n, par: parValue, ...(game.helped ? { helped: true } : {}) } },
   };
   if (won) {
     next.wins = st.wins + 1;

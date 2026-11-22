@@ -46,6 +46,11 @@
           <button id="focus-btn" class="chip">My region</button>
           <button id="world-btn" class="chip">World</button>
         </div>
+        <div id="helper-bar" class="helper-bar" role="status" hidden>
+          <span class="hb-ico" aria-hidden="true">💡</span>
+          <span class="hb-text"><b id="helper-title"></b><span id="helper-count"></span></span>
+          <button id="helper-close" class="chip">Done</button>
+        </div>
         <div id="toast" class="toast" role="status" aria-live="assertive"></div>
         <button id="hint-reveal" class="hint-reveal" aria-live="polite" hidden></button>
         <div class="legend" aria-hidden="true">Your countries: fewer <i style="background:var(--g0)"></i><i style="background:var(--g1)"></i><i style="background:var(--g2)"></i><i style="background:var(--g3)"></i><i style="background:var(--g4)"></i> more hints match</div>
@@ -71,6 +76,18 @@
         <div class="dlg-actions">
           <button value="cancel" class="btn secondary">Keep playing</button>
           <button value="ok" class="btn danger">Give up</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="helper-dlg" aria-labelledby="helper-title-dlg">
+      <form method="dialog">
+        <h2 id="helper-title-dlg">💡 Show matching countries?</h2>
+        <p>The map will highlight every country that fits this hint, so you don't need to know the answer by heart.</p>
+        <p class="muted" style="margin-top:0">It's fully optional. Your shared result will carry a 💡 so friends know you took the easy route.</p>
+        <div class="dlg-actions">
+          <button value="cancel" class="btn secondary">Never mind</button>
+          <button value="ok" class="btn">Show me</button>
         </div>
       </form>
     </dialog>
@@ -105,6 +122,7 @@
         <li>Every guess unlocks a new <strong>hint</strong> about the destination. The last hint is a famous landmark.</li>
         <li>Tap a country to compare it with the hints: <span class="ok">✓</span> it shares that fact with the destination, <span class="no">✗</span> it doesn't.</li>
         <li>An orange banner and outline appear when the destination touches one of your countries. The dotted lines on the map are the equator and the tropics.</li>
+        <li>Stuck on a hint? Tap <strong>💡 Map</strong> beside it to see every country that fits on the map. It's optional, and your shared result gets a 💡.</li>
         <li>Fewer guesses is better. <strong>Par</strong> is the shortest possible route. A new puzzle every midnight (Pacific time).</li>
       </ol>
       <form method="dialog" class="dlg-actions"><button class="btn">Let's go</button></form>
