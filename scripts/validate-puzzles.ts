@@ -44,6 +44,9 @@ puzzles.forEach((p, i) => {
 // Every landmark, not only the ones used so far, must not leak its own country.
 for (const c of Object.values(data.countries)) {
   if (c.playable && c.landmark && leaksTarget(c.landmark, c)) errors.push(`landmark for ${c.name} leaks its name/capital: "${c.landmark}"`);
+  // Same for every bonus fun fact; and each playable country needs at least one.
+  if (c.playable && !c.funFacts?.length) errors.push(`${c.name} has no fun facts`);
+  for (const f of (c.playable && c.funFacts) || []) if (leaksTarget(f, c)) errors.push(`fun fact for ${c.name} leaks its name/capital: "${f}"`);
 }
 
 if (errors.length) {

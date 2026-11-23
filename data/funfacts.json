@@ -1,0 +1,1374 @@
+{
+ "status": "DRAFT",
+ "note": "DRAFT - review before launch. Bonus facts shown after par, cycled. Each must be true, must not name the country or its capital, and should not repeat the landmark hint.",
+ "entries": [
+  {
+   "alpha3": "AFG",
+   "name": "Afghanistan",
+   "facts": [
+    "Its Wakhan Corridor is a thin finger of land reaching out to touch China",
+    "Buzkashi, a rough horseback game played with a goat carcass, is the national sport",
+    "Most of the world's illicit opium has historically come from its poppy fields"
+   ]
+  },
+  {
+   "alpha3": "AGO",
+   "name": "Angola",
+   "facts": [
+    "The Kalandula Falls on the Lucala River are among the largest waterfalls in Africa",
+    "Its giant sable antelope was feared extinct during the civil war and rediscovered in 2005",
+    "It is one of Africa's largest oil producers and a former Portuguese colony"
+   ]
+  },
+  {
+   "alpha3": "ALB",
+   "name": "Albania",
+   "facts": [
+    "People here traditionally nod to mean no and shake their heads to mean yes",
+    "Its flag shows a black double-headed eagle on a red field",
+    "It was one of the world's most isolated communist states until 1991"
+   ]
+  },
+  {
+   "alpha3": "AND",
+   "name": "Andorra",
+   "facts": [
+    "It has no airport, and Catalan is its only official language",
+    "A tiny Pyrenean state famous for duty-free shopping and ski slopes",
+    "It has one of the highest life expectancies in the world"
+   ]
+  },
+  {
+   "alpha3": "ARE",
+   "name": "United Arab Emirates",
+   "facts": [
+    "It is a federation of seven emirates formed in 1971",
+    "Its Palm Jumeirah is an artificial island shaped like a palm tree",
+    "Its Ferrari World theme park has one of the fastest roller coasters on Earth"
+   ]
+  },
+  {
+   "alpha3": "ARG",
+   "name": "Argentina",
+   "facts": [
+    "Aconcagua, the highest mountain outside Asia, rises in its Andes",
+    "The tango was born in the dance halls of its capital's port districts",
+    "It has won the FIFA World Cup three times, most recently in 2022"
+   ]
+  },
+  {
+   "alpha3": "ARM",
+   "name": "Armenia",
+   "facts": [
+    "Mount Ararat, a national symbol, is visible from it but lies across the border in Turkey",
+    "Its 39-letter alphabet was created around 405 AD by Mesrop Mashtots",
+    "The world's oldest known leather shoe, about 5,500 years old, was found in one of its caves"
+   ]
+  },
+  {
+   "alpha3": "AUT",
+   "name": "Austria",
+   "facts": [
+    "The Sound of Music was set and filmed around Salzburg",
+    "Arnold Schwarzenegger grew up here",
+    "Its capital's coffee house culture is on UNESCO's intangible heritage list"
+   ]
+  },
+  {
+   "alpha3": "AZE",
+   "name": "Azerbaijan",
+   "facts": [
+    "It has about half of the world's mud volcanoes",
+    "Its capital, on the Caspian Sea, lies below sea level",
+    "It hosted the Eurovision Song Contest in 2012 after winning in 2011"
+   ]
+  },
+  {
+   "alpha3": "BDI",
+   "name": "Burundi",
+   "facts": [
+    "Its royal drummers perform a famous, thunderous drumming tradition",
+    "Lake Tanganyika, one of the deepest lakes on Earth, forms much of its western edge",
+    "It moved its political capital away from its largest city, on Lake Tanganyika, in 2019"
+   ]
+  },
+  {
+   "alpha3": "BEL",
+   "name": "Belgium",
+   "facts": [
+    "It has three official languages: Dutch, French and German",
+    "Tintin and the Smurfs were created by its comic artists",
+    "It once went 541 days without a government"
+   ]
+  },
+  {
+   "alpha3": "BEN",
+   "name": "Benin",
+   "facts": [
+    "It is considered the birthplace of Vodun, or voodoo",
+    "Ganvié, a whole town on stilts, sits in Lake Nokoué",
+    "Its Ouidah was a major port of the Atlantic slave trade"
+   ]
+  },
+  {
+   "alpha3": "BFA",
+   "name": "Burkina Faso",
+   "facts": [
+    "Its name means roughly \"land of upright people\"",
+    "The Sindou Peaks are striking rock needles in its southwest",
+    "Its Grand Mosque of Bobo-Dioulasso is built of mud brick"
+   ]
+  },
+  {
+   "alpha3": "BGD",
+   "name": "Bangladesh",
+   "facts": [
+    "The Sundarbans, the world's largest mangrove forest, shelter Bengal tigers here",
+    "Cox's Bazar is one of the longest natural sea beaches in the world",
+    "It is one of the most densely populated large countries on Earth"
+   ]
+  },
+  {
+   "alpha3": "BGR",
+   "name": "Bulgaria",
+   "facts": [
+    "The Cyrillic script was developed in its medieval First Empire",
+    "People here nod to mean no and shake their heads to mean yes",
+    "Some of the oldest worked gold in the world was found in its Varna Necropolis"
+   ]
+  },
+  {
+   "alpha3": "BIH",
+   "name": "Bosnia and Herzegovina",
+   "facts": [
+    "The assassination that sparked World War I happened in its capital in 1914",
+    "It hosted the 1984 Winter Olympics",
+    "Its country has three rotating presidents at once"
+   ]
+  },
+  {
+   "alpha3": "BLR",
+   "name": "Belarus",
+   "facts": [
+    "Białowieża Forest, home to European bison, straddles its border with Poland",
+    "Its land is so flat and wet it is called the land of 10,000 lakes",
+    "It was the scene of some of the heaviest losses of World War II"
+   ]
+  },
+  {
+   "alpha3": "BLZ",
+   "name": "Belize",
+   "facts": [
+    "It is the only Central American country where English is the official language",
+    "It was called British Honduras until 1973",
+    "It created the world's first jaguar reserve, Cockscomb Basin"
+   ]
+  },
+  {
+   "alpha3": "BOL",
+   "name": "Bolivia",
+   "facts": [
+    "It has two capitals: one for the government and one in the constitution",
+    "Lake Titicaca, shared with Peru, is one of the highest navigable lakes in the world",
+    "It still celebrates a Day of the Sea, mourning the coastline it lost in 1884"
+   ]
+  },
+  {
+   "alpha3": "BRA",
+   "name": "Brazil",
+   "facts": [
+    "It has won the FIFA World Cup a record five times",
+    "Most of the Amazon rainforest lies within its borders",
+    "It is the only country in the Americas where Portuguese is the main language"
+   ]
+  },
+  {
+   "alpha3": "BTN",
+   "name": "Bhutan",
+   "facts": [
+    "It is one of the few carbon-negative countries in the world",
+    "Its flag features a white thunder dragon",
+    "Television and the internet only arrived in 1999"
+   ]
+  },
+  {
+   "alpha3": "BWA",
+   "name": "Botswana",
+   "facts": [
+    "It has the largest elephant population in Africa",
+    "Its Makgadikgadi Pans are among the largest salt flats in the world",
+    "It is one of the world's largest producers of diamonds by value"
+   ]
+  },
+  {
+   "alpha3": "CAF",
+   "name": "Central African Republic",
+   "facts": [
+    "Dzanga-Sangha Reserve is famous for forest elephants and lowland gorillas",
+    "It is landlocked and lies near the very center of the continent",
+    "Its flag has four horizontal stripes crossed by a vertical red one"
+   ]
+  },
+  {
+   "alpha3": "CAN",
+   "name": "Canada",
+   "facts": [
+    "It has the longest coastline of any country",
+    "Basketball was invented by one of its citizens, James Naismith",
+    "It has more lakes than the rest of the world combined"
+   ]
+  },
+  {
+   "alpha3": "CHE",
+   "name": "Switzerland",
+   "facts": [
+    "It has four national languages",
+    "CERN's Large Hadron Collider runs beneath its border with France",
+    "The Matterhorn rises on its border with Italy"
+   ]
+  },
+  {
+   "alpha3": "CHL",
+   "name": "Chile",
+   "facts": [
+    "It is about 4,300 km long but averages only around 175 km wide",
+    "The Atacama is one of the driest non-polar deserts on Earth",
+    "It recorded the strongest earthquake ever measured, magnitude 9.5 in 1960"
+   ]
+  },
+  {
+   "alpha3": "CHN",
+   "name": "China",
+   "facts": [
+    "It uses a single time zone despite spanning about five",
+    "Paper, printing, gunpowder and the compass were all invented here",
+    "Giant pandas live wild only in its mountain forests"
+   ]
+  },
+  {
+   "alpha3": "CIV",
+   "name": "Ivory Coast",
+   "facts": [
+    "It is the world's largest producer of cocoa beans",
+    "Didier Drogba is said to have helped pause its civil war with a televised plea",
+    "Its largest city, Abidjan, was the capital until 1983"
+   ]
+  },
+  {
+   "alpha3": "CMR",
+   "name": "Cameroon",
+   "facts": [
+    "Its highest peak, an active volcano on the coast, is one of the wettest places in Africa",
+    "In 1986 a gas eruption at Lake Nyos killed about 1,700 people",
+    "Its national football team is nicknamed the Indomitable Lions"
+   ]
+  },
+  {
+   "alpha3": "COD",
+   "name": "DRC",
+   "facts": [
+    "It is the largest country in sub-Saharan Africa by area",
+    "It holds much of the world's cobalt, used in phone and car batteries",
+    "Bonobos live in the wild only here"
+   ]
+  },
+  {
+   "alpha3": "COG",
+   "name": "Congo",
+   "facts": [
+    "It was once part of French Equatorial Africa",
+    "Odzala-Kokoua National Park is a stronghold of western lowland gorillas",
+    "About two-thirds of its land is covered by rainforest"
+   ]
+  },
+  {
+   "alpha3": "COL",
+   "name": "Colombia",
+   "facts": [
+    "It is the only South American country with both Pacific and Caribbean coasts",
+    "Caño Cristales is nicknamed the river of five colors",
+    "It is the world's largest producer of emeralds"
+   ]
+  },
+  {
+   "alpha3": "CRI",
+   "name": "Costa Rica",
+   "facts": [
+    "It holds roughly 5% of the world's biodiversity on a tiny patch of land",
+    "Its people call themselves Ticos",
+    "Nearly all of its electricity comes from renewable sources"
+   ]
+  },
+  {
+   "alpha3": "CZE",
+   "name": "Czechia",
+   "facts": [
+    "Its people drink more beer per person than anyone else in the world",
+    "The word \"robot\" comes from one of its writers, Karel Čapek",
+    "Its capital's astronomical clock has run since 1410"
+   ]
+  },
+  {
+   "alpha3": "DEU",
+   "name": "Germany",
+   "facts": [
+    "It has more than 1,500 kinds of sausage",
+    "Oktoberfest in Munich is the world's largest beer festival",
+    "Parts of its motorways have no general speed limit"
+   ]
+  },
+  {
+   "alpha3": "DJI",
+   "name": "Djibouti",
+   "facts": [
+    "It hosts military bases of the USA, China, France, Japan and others",
+    "It guards the Bab-el-Mandeb strait, a gateway to the Red Sea",
+    "Its Lake Abbe is dotted with steaming limestone chimneys"
+   ]
+  },
+  {
+   "alpha3": "DNK",
+   "name": "Denmark",
+   "facts": [
+    "Its red-and-white flag is the oldest national flag still in use",
+    "Tivoli Gardens is one of the oldest amusement parks in the world",
+    "It has more bicycles than people in its capital"
+   ]
+  },
+  {
+   "alpha3": "DZA",
+   "name": "Algeria",
+   "facts": [
+    "More than 80% of its land is Sahara Desert",
+    "The Tassili n'Ajjer plateau has thousands of prehistoric rock paintings",
+    "It won independence from France in 1962 after an eight-year war"
+   ]
+  },
+  {
+   "alpha3": "ECU",
+   "name": "Ecuador",
+   "facts": [
+    "It is named after the equator, which runs through it",
+    "The summit of Chimborazo is the farthest point from Earth's center",
+    "It uses the US dollar as its currency"
+   ]
+  },
+  {
+   "alpha3": "EGY",
+   "name": "Egypt",
+   "facts": [
+    "The Suez Canal links the Mediterranean to the Red Sea through it",
+    "Almost all of its people live along the Nile and its delta",
+    "Abu Simbel's temples were moved block by block to escape a reservoir"
+   ]
+  },
+  {
+   "alpha3": "ERI",
+   "name": "Eritrea",
+   "facts": [
+    "The Danakil Depression is one of the hottest places on Earth",
+    "It won independence from Ethiopia in 1993 after a 30-year war",
+    "Its Red Sea coast includes the Dahlak Archipelago"
+   ]
+  },
+  {
+   "alpha3": "ESH",
+   "name": "Western Sahara",
+   "facts": [
+    "It is one of the most sparsely populated territories on Earth",
+    "Spain controlled it until 1975",
+    "Its phosphate is carried to the sea on one of the longest conveyor belts in the world"
+   ]
+  },
+  {
+   "alpha3": "ESP",
+   "name": "Spain",
+   "facts": [
+    "La Tomatina is a festival where crowds throw tomatoes at each other",
+    "Pamplona's Running of the Bulls takes place every July",
+    "Its Prado Museum holds works by Velázquez and Goya"
+   ]
+  },
+  {
+   "alpha3": "EST",
+   "name": "Estonia",
+   "facts": [
+    "About half of the country is covered by forest",
+    "Its Singing Revolution helped it regain independence in 1991",
+    "It was one of the first countries to let citizens vote online in national elections, from 2005"
+   ]
+  },
+  {
+   "alpha3": "ETH",
+   "name": "Ethiopia",
+   "facts": [
+    "Coffee is said to have been discovered here by a goat herder named Kaldi",
+    "Its calendar is about seven to eight years behind the Gregorian one",
+    "The fossil skeleton \"Lucy\" was found here"
+   ]
+  },
+  {
+   "alpha3": "FIN",
+   "name": "Finland",
+   "facts": [
+    "It is called the land of a thousand lakes, but has about 188,000",
+    "Nokia began here as a paper mill in 1865",
+    "It has been ranked the happiest country in the world several years in a row"
+   ]
+  },
+  {
+   "alpha3": "FRA",
+   "name": "France",
+   "facts": [
+    "It is the most visited country in the world",
+    "It has more time zones than any other country, thanks to overseas territories",
+    "The world's most famous cycling race has toured its roads every July since 1903"
+   ]
+  },
+  {
+   "alpha3": "GAB",
+   "name": "Gabon",
+   "facts": [
+    "About 88% of its land is covered by rainforest",
+    "Its Oklo uranium deposits held natural nuclear reactors two billion years ago",
+    "It is home to a large share of the world's forest elephants"
+   ]
+  },
+  {
+   "alpha3": "GEO",
+   "name": "Georgia",
+   "facts": [
+    "Its alphabet has a unique flowing script with 33 letters",
+    "Ushguli in its Svaneti region is one of Europe's highest villages",
+    "Its toasting feasts are led by a toastmaster called a tamada"
+   ]
+  },
+  {
+   "alpha3": "GHA",
+   "name": "Ghana",
+   "facts": [
+    "Lake Volta is one of the largest artificial lakes in the world",
+    "It is the world's second-largest cocoa producer",
+    "Its people craft famous \"fantasy coffins\" shaped like fish, cars or shoes"
+   ]
+  },
+  {
+   "alpha3": "GIN",
+   "name": "Guinea",
+   "facts": [
+    "It holds about a quarter of the world's known bauxite, the ore of aluminum",
+    "Mount Nimba's reserve is home to a rare toad that gives birth to live young",
+    "It was the first French African colony to vote for independence, in 1958"
+   ]
+  },
+  {
+   "alpha3": "GMB",
+   "name": "Gambia",
+   "facts": [
+    "It is nicknamed the Smiling Coast of Africa",
+    "Kunta Kinteh Island features in the story of Alex Haley's Roots",
+    "Its border was said to be drawn by the range of a cannonball fired from a riverboat"
+   ]
+  },
+  {
+   "alpha3": "GNB",
+   "name": "Guinea-Bissau",
+   "facts": [
+    "Cashew nuts make up most of its exports",
+    "It won independence from Portugal in 1974 after a long guerrilla war",
+    "Its Orango Island is sacred to the matriarchal Bijagó people"
+   ]
+  },
+  {
+   "alpha3": "GNQ",
+   "name": "Equatorial Guinea",
+   "facts": [
+    "It is the only African country with Spanish as an official language",
+    "Its mainland region is called Río Muni",
+    "Oil discoveries in the 1990s made it one of Africa's richest countries per person"
+   ]
+  },
+  {
+   "alpha3": "GRC",
+   "name": "Greece",
+   "facts": [
+    "The Olympic Games began at Olympia in ancient times",
+    "It has around 6,000 islands, but only about 200 are inhabited",
+    "Democracy was first developed here"
+   ]
+  },
+  {
+   "alpha3": "GTM",
+   "name": "Guatemala",
+   "facts": [
+    "Lake Atitlán is ringed by three volcanoes",
+    "The resplendent quetzal bird gives its name to the currency",
+    "Its old capital, Antigua, is famous for colonial ruins and Holy Week carpets"
+   ]
+  },
+  {
+   "alpha3": "GUY",
+   "name": "Guyana",
+   "facts": [
+    "Its name is often said to mean land of many waters",
+    "It is the only South American country where cricket is a top sport",
+    "Huge offshore oil finds since 2015 have made its economy one of the fastest-growing"
+   ]
+  },
+  {
+   "alpha3": "HKG",
+   "name": "Hong Kong",
+   "facts": [
+    "It has more skyscrapers than any other city in the world",
+    "Its Octopus card was one of the first contactless payment cards",
+    "Its Tian Tan Buddha is a giant bronze statue on Lantau Island"
+   ]
+  },
+  {
+   "alpha3": "HND",
+   "name": "Honduras",
+   "facts": [
+    "It was the original \"banana republic\"",
+    "The legendary lost White City was surveyed in its Mosquitia jungle in 2015",
+    "Its Bay Islands sit on the second-largest barrier reef in the world"
+   ]
+  },
+  {
+   "alpha3": "HRV",
+   "name": "Croatia",
+   "facts": [
+    "The necktie comes from its soldiers' scarves, the cravat",
+    "Dalmatian dogs are named after its Dalmatia region",
+    "It reached the FIFA World Cup final in 2018"
+   ]
+  },
+  {
+   "alpha3": "HUN",
+   "name": "Hungary",
+   "facts": [
+    "Lake Balaton is the largest lake in Central Europe",
+    "Its capital sits on more than 100 thermal springs",
+    "Paprika is its signature spice, used in goulash"
+   ]
+  },
+  {
+   "alpha3": "IND",
+   "name": "India",
+   "facts": [
+    "It is the world's most populous country",
+    "Chess most likely began here as chaturanga",
+    "Its film industry makes more movies each year than any other country"
+   ]
+  },
+  {
+   "alpha3": "IRN",
+   "name": "Iran",
+   "facts": [
+    "Its traditional calendar starts the new year, Nowruz, on the spring equinox",
+    "Its handwoven carpets are among the most famous in the world",
+    "It produces most of the world's saffron"
+   ]
+  },
+  {
+   "alpha3": "IRQ",
+   "name": "Iraq",
+   "facts": [
+    "Writing began here, in ancient Mesopotamia, around 3200 BC",
+    "The Tigris and Euphrates rivers flow through it",
+    "Its ancient Sumerians gave us the 60-minute hour"
+   ]
+  },
+  {
+   "alpha3": "ISR",
+   "name": "Israel",
+   "facts": [
+    "The Dead Sea, on its border, is the lowest point on land on Earth",
+    "Its Hebrew language was revived as an everyday tongue in the 1900s",
+    "Drip irrigation was developed here"
+   ]
+  },
+  {
+   "alpha3": "ITA",
+   "name": "Italy",
+   "facts": [
+    "It has more UNESCO World Heritage Sites than any other country",
+    "Pizza Margherita was named after one of its queens",
+    "Two independent countries lie entirely inside it"
+   ]
+  },
+  {
+   "alpha3": "JOR",
+   "name": "Jordan",
+   "facts": [
+    "Wadi Rum's red desert stood in for Mars in several films",
+    "It shares the Dead Sea with its western neighbors",
+    "It has only about 26 km of coastline, on the Gulf of Aqaba"
+   ]
+  },
+  {
+   "alpha3": "KAZ",
+   "name": "Kazakhstan",
+   "facts": [
+    "It is the largest landlocked country in the world",
+    "Apples are thought to have originated in its mountains",
+    "It moved its capital from Almaty to a new city in 1997"
+   ]
+  },
+  {
+   "alpha3": "KEN",
+   "name": "Kenya",
+   "facts": [
+    "Its runners dominate world long-distance running",
+    "The equator crosses it, and snow sits on its highest mountain",
+    "M-Pesa, a pioneering mobile money system, launched here in 2007"
+   ]
+  },
+  {
+   "alpha3": "KGZ",
+   "name": "Kyrgyzstan",
+   "facts": [
+    "About 90% of the country is mountainous",
+    "The Manas epic, one of the longest poems in the world, comes from here",
+    "Nomads here still live in yurts on summer pastures"
+   ]
+  },
+  {
+   "alpha3": "KHM",
+   "name": "Cambodia",
+   "facts": [
+    "It is the only country with a building on its national flag",
+    "The Tonlé Sap lake reverses its flow each rainy season",
+    "The Khmer Rouge regime ruled it from 1975 to 1979"
+   ]
+  },
+  {
+   "alpha3": "KOR",
+   "name": "South Korea",
+   "facts": [
+    "It hosted the Summer Olympics in 1988 and the Winter Olympics in 2018",
+    "Its Hangul alphabet was invented in the 1400s by King Sejong",
+    "Kimchi, fermented cabbage, is its national side dish"
+   ]
+  },
+  {
+   "alpha3": "KWT",
+   "name": "Kuwait",
+   "facts": [
+    "Its dinar is the highest-valued currency unit in the world",
+    "It holds some of the largest oil reserves on Earth",
+    "It has no natural rivers or lakes"
+   ]
+  },
+  {
+   "alpha3": "LAO",
+   "name": "Laos",
+   "facts": [
+    "It is the only landlocked country in Southeast Asia",
+    "Its Luang Prabang is famous for the dawn alms procession of monks",
+    "The Mekong River forms much of its western border"
+   ]
+  },
+  {
+   "alpha3": "LBN",
+   "name": "Lebanon",
+   "facts": [
+    "You can ski in the mountains and swim in the sea on the same day",
+    "The ancient Phoenicians, who spread the alphabet, came from its coast",
+    "Its Jeita Grotto has huge limestone caves with an underground river"
+   ]
+  },
+  {
+   "alpha3": "LBR",
+   "name": "Liberia",
+   "facts": [
+    "Its flag looks like the US flag but has only one star",
+    "Ellen Johnson Sirleaf became Africa's first elected female head of state here",
+    "Its football star George Weah later became president"
+   ]
+  },
+  {
+   "alpha3": "LBY",
+   "name": "Libya",
+   "facts": [
+    "Over 90% of its land is desert",
+    "Its Leptis Magna is one of the best-preserved Roman cities in the world",
+    "Its Great Man-Made River pipes ancient groundwater across the Sahara"
+   ]
+  },
+  {
+   "alpha3": "LIE",
+   "name": "Liechtenstein",
+   "facts": [
+    "It is one of only two doubly landlocked countries in the world",
+    "It has no army and no airport",
+    "Its prince lives in a castle overlooking the capital"
+   ]
+  },
+  {
+   "alpha3": "LSO",
+   "name": "Lesotho",
+   "facts": [
+    "Its lowest point is higher than any other country's lowest point",
+    "People wear the Basotho blanket and conical straw hat",
+    "It has one of the highest ski resorts in Africa, Afriski"
+   ]
+  },
+  {
+   "alpha3": "LTU",
+   "name": "Lithuania",
+   "facts": [
+    "It was the first Soviet republic to declare independence, in 1990",
+    "Basketball is practically a national religion here",
+    "The geographic center of Europe is claimed to lie here"
+   ]
+  },
+  {
+   "alpha3": "LUX",
+   "name": "Luxembourg",
+   "facts": [
+    "It made all public transport free in 2020",
+    "It is one of the richest countries in the world per person",
+    "Its people commonly speak three languages, including French and German"
+   ]
+  },
+  {
+   "alpha3": "LVA",
+   "name": "Latvia",
+   "facts": [
+    "About half the country is covered in forest",
+    "Its Song and Dance Festival brings together tens of thousands of singers",
+    "The Baltic Way human chain passed through it in 1989"
+   ]
+  },
+  {
+   "alpha3": "MAC",
+   "name": "Macau",
+   "facts": [
+    "It is one of the most densely populated places on Earth",
+    "Its local cuisine blends Portuguese and Chinese cooking, as in its famous egg tarts",
+    "Its 338 m tower hosts one of the highest commercial bungee jumps in the world"
+   ]
+  },
+  {
+   "alpha3": "MAR",
+   "name": "Morocco",
+   "facts": [
+    "The University of al-Qarawiyyin, founded in 859, is among the oldest in the world",
+    "Chefchaouen is a mountain town painted in shades of blue",
+    "It became the first African team to reach a World Cup semi-final, in 2022"
+   ]
+  },
+  {
+   "alpha3": "MCO",
+   "name": "Monaco",
+   "facts": [
+    "It is the second-smallest country in the world",
+    "Its citizens are not allowed to gamble in its famous casino",
+    "Actress Grace Kelly married its prince in 1956"
+   ]
+  },
+  {
+   "alpha3": "MDA",
+   "name": "Moldova",
+   "facts": [
+    "It is one of the least-visited countries in Europe",
+    "The breakaway region of Transnistria lies along its eastern border",
+    "Wine is one of its most important exports"
+   ]
+  },
+  {
+   "alpha3": "MEX",
+   "name": "Mexico",
+   "facts": [
+    "Chocolate, chili peppers and corn were first domesticated here",
+    "The Day of the Dead is celebrated with sugar skulls and marigolds",
+    "The asteroid that wiped out the dinosaurs hit its Yucatán coast"
+   ]
+  },
+  {
+   "alpha3": "MKD",
+   "name": "North Macedonia",
+   "facts": [
+    "Lake Ohrid is one of the oldest lakes in Europe",
+    "Alexander the Great is a disputed national hero here",
+    "It is landlocked in the middle of the Balkans"
+   ]
+  },
+  {
+   "alpha3": "MLI",
+   "name": "Mali",
+   "facts": [
+    "Mansa Musa, often called the richest person in history, ruled an empire here",
+    "The Festival in the Desert brought Tuareg music to the world",
+    "The Niger River's inland delta floods a vast area of it every year"
+   ]
+  },
+  {
+   "alpha3": "MMR",
+   "name": "Myanmar",
+   "facts": [
+    "It was called Burma until 1989",
+    "Fishermen on Inle Lake row with one leg wrapped around the oar",
+    "Its people often wear thanaka, a pale bark paste, on their faces"
+   ]
+  },
+  {
+   "alpha3": "MNE",
+   "name": "Montenegro",
+   "facts": [
+    "Its name means \"black mountain\"",
+    "It uses the euro even though it is not in the EU",
+    "Ostrog Monastery is built into a sheer cliff face"
+   ]
+  },
+  {
+   "alpha3": "MNG",
+   "name": "Mongolia",
+   "facts": [
+    "It is the most sparsely populated sovereign country in the world",
+    "The Naadam festival features wrestling, horse racing and archery",
+    "Dinosaur eggs were first found in its Gobi Desert"
+   ]
+  },
+  {
+   "alpha3": "MOZ",
+   "name": "Mozambique",
+   "facts": [
+    "It has a long Indian Ocean coastline of about 2,500 km",
+    "Its Bazaruto Archipelago is one of the last refuges of the dugong in East Africa",
+    "It is a former Portuguese colony in southeastern Africa"
+   ]
+  },
+  {
+   "alpha3": "MRT",
+   "name": "Mauritania",
+   "facts": [
+    "It was the last country to abolish slavery, in 1981",
+    "Chinguetti's ancient libraries hold medieval manuscripts in the desert",
+    "The Banc d'Arguin is a huge wintering ground for migratory birds"
+   ]
+  },
+  {
+   "alpha3": "MWI",
+   "name": "Malawi",
+   "facts": [
+    "Its lake has more species of fish than any other lake in the world",
+    "About a fifth of the country is covered by one great lake",
+    "It was called Nyasaland under British rule"
+   ]
+  },
+  {
+   "alpha3": "MYS",
+   "name": "Malaysia",
+   "facts": [
+    "It is split into two parts by the South China Sea",
+    "The world's largest flower, Rafflesia, blooms in its rainforests",
+    "Its king is elected every five years from nine hereditary rulers"
+   ]
+  },
+  {
+   "alpha3": "NAM",
+   "name": "Namibia",
+   "facts": [
+    "It has the largest population of free-roaming cheetahs",
+    "The Hoba meteorite, the largest known on Earth, lies where it fell here",
+    "It was one of the first countries to put environmental protection in its constitution"
+   ]
+  },
+  {
+   "alpha3": "NER",
+   "name": "Niger",
+   "facts": [
+    "It is one of the hottest countries in the world and mostly Sahara",
+    "Its W National Park is shared with two neighboring countries",
+    "The Cure Salée festival gathers Tuareg and Wodaabe herders each year"
+   ]
+  },
+  {
+   "alpha3": "NGA",
+   "name": "Nigeria",
+   "facts": [
+    "It has more than 500 languages",
+    "Its Benin Bronzes are among Africa's most famous artworks",
+    "Afrobeats stars like Burna Boy and Wizkid come from here"
+   ]
+  },
+  {
+   "alpha3": "NIC",
+   "name": "Nicaragua",
+   "facts": [
+    "Its great lake is home to freshwater bull sharks",
+    "You can sandboard down the active Cerro Negro volcano",
+    "It is called the land of lakes and volcanoes"
+   ]
+  },
+  {
+   "alpha3": "NLD",
+   "name": "Netherlands",
+   "facts": [
+    "About a quarter of the country lies below sea level",
+    "It has more bicycles than people",
+    "Van Gogh, Rembrandt and Vermeer were born here"
+   ]
+  },
+  {
+   "alpha3": "NOR",
+   "name": "Norway",
+   "facts": [
+    "The midnight sun shines over its far north all summer",
+    "It has won more Winter Olympic medals than any other country",
+    "Most new cars sold here are electric"
+   ]
+  },
+  {
+   "alpha3": "NPL",
+   "name": "Nepal",
+   "facts": [
+    "Eight of the world's ten highest mountains are on its land or border",
+    "Its Kumari is a young girl worshipped as a living goddess",
+    "Its Gurkha soldiers are famous for serving in the British Army"
+   ]
+  },
+  {
+   "alpha3": "OMN",
+   "name": "Oman",
+   "facts": [
+    "Its Wahiba Sands are a vast sea of dunes",
+    "Its Musandam peninsula is cut off from the rest of the country",
+    "Its sailors once traded as far as China and East Africa"
+   ]
+  },
+  {
+   "alpha3": "PAK",
+   "name": "Pakistan",
+   "facts": [
+    "K2, the second-highest mountain on Earth, rises on its border",
+    "The ancient city of Mohenjo-daro was part of the Indus Valley Civilization",
+    "Malala Yousafzai, the youngest Nobel Peace Prize laureate, grew up here"
+   ]
+  },
+  {
+   "alpha3": "PAN",
+   "name": "Panama",
+   "facts": [
+    "It is the only place where you can watch the sun rise over the Pacific and set over the Atlantic",
+    "It uses the US dollar alongside its own balboa",
+    "It connects Central and South America"
+   ]
+  },
+  {
+   "alpha3": "PER",
+   "name": "Peru",
+   "facts": [
+    "The Nazca Lines are giant ancient drawings in its desert",
+    "Thousands of potato varieties are grown here",
+    "It shares Lake Titicaca with Bolivia"
+   ]
+  },
+  {
+   "alpha3": "POL",
+   "name": "Poland",
+   "facts": [
+    "Marie Curie and Copernicus were both born here",
+    "Its capital was almost entirely rebuilt after World War II",
+    "Pierogi, filled dumplings, are a national favorite"
+   ]
+  },
+  {
+   "alpha3": "PRK",
+   "name": "North Korea",
+   "facts": [
+    "It has its own calendar, counting years from 1912",
+    "Its Ryugyong Hotel stood unfinished for decades",
+    "It shares the world's most heavily fortified border with its southern neighbor"
+   ]
+  },
+  {
+   "alpha3": "PRT",
+   "name": "Portugal",
+   "facts": [
+    "Its explorers Vasco da Gama and Magellan led famous voyages of discovery",
+    "It is the world's largest producer of cork",
+    "Fado, a mournful style of song, comes from here"
+   ]
+  },
+  {
+   "alpha3": "PRY",
+   "name": "Paraguay",
+   "facts": [
+    "Most of its people speak the Indigenous language Guaraní",
+    "The Itaipú Dam, shared with Brazil, is one of the largest hydroelectric plants on Earth",
+    "It is landlocked in the heart of South America"
+   ]
+  },
+  {
+   "alpha3": "PSE",
+   "name": "Palestine",
+   "facts": [
+    "Jericho is one of the oldest continuously inhabited cities in the world",
+    "Its olive trees and olive oil are central to its culture",
+    "It is recognized as a state by most UN members"
+   ]
+  },
+  {
+   "alpha3": "QAT",
+   "name": "Qatar",
+   "facts": [
+    "It has one of the highest incomes per person in the world",
+    "It is a peninsula jutting into the Persian Gulf",
+    "Its Al Jazeera network launched in 1996"
+   ]
+  },
+  {
+   "alpha3": "ROU",
+   "name": "Romania",
+   "facts": [
+    "Its Palace of the Parliament is one of the heaviest buildings in the world",
+    "The Danube Delta is Europe's best-preserved river delta",
+    "Gymnast Nadia Comăneci scored the first perfect 10 at the Olympics"
+   ]
+  },
+  {
+   "alpha3": "RUS",
+   "name": "Russia",
+   "facts": [
+    "It is the largest country in the world, spanning 11 time zones",
+    "Lake Baikal holds about a fifth of the world's unfrozen fresh surface water",
+    "The Trans-Siberian Railway is the longest railway line in the world"
+   ]
+  },
+  {
+   "alpha3": "RWA",
+   "name": "Rwanda",
+   "facts": [
+    "It banned plastic bags in 2008",
+    "Its parliament has the highest share of women in the world",
+    "Once a month, people join a national community clean-up day called Umuganda"
+   ]
+  },
+  {
+   "alpha3": "SAU",
+   "name": "Saudi Arabia",
+   "facts": [
+    "The Rub' al Khali, or Empty Quarter, is the largest sand desert in the world",
+    "It has no permanent rivers",
+    "Women were allowed to drive here only from 2018"
+   ]
+  },
+  {
+   "alpha3": "SDN",
+   "name": "Sudan",
+   "facts": [
+    "The Blue Nile and White Nile meet in its capital",
+    "It was the largest country in Africa until 2011",
+    "Its ancient Kingdom of Kush once ruled Egypt"
+   ]
+  },
+  {
+   "alpha3": "SEN",
+   "name": "Senegal",
+   "facts": [
+    "A famous desert car rally from Paris ended in its capital for nearly 30 years",
+    "The African Renaissance Monument is taller than the Statue of Liberty",
+    "It reached the World Cup quarter-finals in its first appearance, in 2002"
+   ]
+  },
+  {
+   "alpha3": "SLE",
+   "name": "Sierra Leone",
+   "facts": [
+    "Its name means \"lion mountains\" in Portuguese",
+    "Its capital was founded as a home for freed slaves",
+    "Its Tiwai Island is a haven for pygmy hippos and primates"
+   ]
+  },
+  {
+   "alpha3": "SLV",
+   "name": "El Salvador",
+   "facts": [
+    "It became the first country to make Bitcoin legal tender, in 2021",
+    "Pupusas, stuffed corn cakes, are its national dish",
+    "It is nicknamed the land of volcanoes"
+   ]
+  },
+  {
+   "alpha3": "SMR",
+   "name": "San Marino",
+   "facts": [
+    "It is completely surrounded by Italy",
+    "It has two heads of state, the Captains Regent, who serve six-month terms",
+    "It is one of the smallest countries in Europe"
+   ]
+  },
+  {
+   "alpha3": "SOM",
+   "name": "Somalia",
+   "facts": [
+    "Its camel herd is the largest in the world",
+    "Laas Geel's caves hold some of the best-preserved rock art in Africa",
+    "It is known as a nation of poets"
+   ]
+  },
+  {
+   "alpha3": "SRB",
+   "name": "Serbia",
+   "facts": [
+    "Nikola Tesla's archive and museum are in its capital",
+    "Raspberries are one of its biggest exports",
+    "The Danube runs through it, including the Iron Gates gorge"
+   ]
+  },
+  {
+   "alpha3": "SSD",
+   "name": "South Sudan",
+   "facts": [
+    "The Sudd, one of the largest wetlands in the world, covers much of it",
+    "Its antelope migration is among the largest land mammal migrations on Earth",
+    "It split from Sudan after a 2011 referendum"
+   ]
+  },
+  {
+   "alpha3": "SUR",
+   "name": "Suriname",
+   "facts": [
+    "More than 90% of the country is covered by rainforest",
+    "The Dutch swapped New Amsterdam (New York) for it in 1667",
+    "Its capital's wooden colonial center is a UNESCO site"
+   ]
+  },
+  {
+   "alpha3": "SVK",
+   "name": "Slovakia",
+   "facts": [
+    "It has more castles per person than almost any other country",
+    "It makes more cars per person than any other country",
+    "It split peacefully from its neighbor on 1 January 1993"
+   ]
+  },
+  {
+   "alpha3": "SVN",
+   "name": "Slovenia",
+   "facts": [
+    "About 60% of the country is covered by forest",
+    "Its Postojna Cave is home to the olm, a blind cave salamander",
+    "Melania Trump was born here"
+   ]
+  },
+  {
+   "alpha3": "SWE",
+   "name": "Sweden",
+   "facts": [
+    "The Nobel Prizes are awarded in its capital",
+    "Spotify was founded here in 2006",
+    "It has more islands than any other country, around 267,000"
+   ]
+  },
+  {
+   "alpha3": "SWZ",
+   "name": "Eswatini",
+   "facts": [
+    "The Umhlanga Reed Dance gathers tens of thousands of young women each year",
+    "It is one of the smallest countries in Africa",
+    "Its king changed the country's name in 2018"
+   ]
+  },
+  {
+   "alpha3": "SYR",
+   "name": "Syria",
+   "facts": [
+    "Its capital is often called the oldest continuously inhabited capital in the world",
+    "Aleppo soap, made with olive and laurel oil, comes from here",
+    "The Krak des Chevaliers is one of the best-preserved Crusader castles"
+   ]
+  },
+  {
+   "alpha3": "TCD",
+   "name": "Chad",
+   "facts": [
+    "Its great lake has shrunk by about 90% since the 1960s",
+    "Its Bodélé Depression is the dustiest place on Earth",
+    "Zakouma National Park is famed for its recovering elephant herds"
+   ]
+  },
+  {
+   "alpha3": "TGO",
+   "name": "Togo",
+   "facts": [
+    "Its Koutammakou landscape has fortress-like mud tower houses",
+    "Its football star Emmanuel Adebayor played for Arsenal",
+    "Its capital is the only capital in the world right on an international border"
+   ]
+  },
+  {
+   "alpha3": "THA",
+   "name": "Thailand",
+   "facts": [
+    "Its capital's full ceremonial name is the longest place name in the world",
+    "The \"art of eight limbs\", a kickboxing style using fists, elbows, knees and shins, comes from here",
+    "Songkran, the new year festival, is a giant nationwide water fight"
+   ]
+  },
+  {
+   "alpha3": "TJK",
+   "name": "Tajikistan",
+   "facts": [
+    "Its Fedchenko Glacier is one of the longest glaciers outside the polar regions",
+    "Its Rogun Dam is set to be the tallest dam in the world",
+    "Its main language is closely related to Persian"
+   ]
+  },
+  {
+   "alpha3": "TKM",
+   "name": "Turkmenistan",
+   "facts": [
+    "Its Karakum Desert covers about 70% of the country",
+    "Akhal-Teke horses, with metallic shining coats, are a national symbol",
+    "Its capital has more white marble buildings than anywhere else on Earth"
+   ]
+  },
+  {
+   "alpha3": "TUN",
+   "name": "Tunisia",
+   "facts": [
+    "The amphitheater of El Jem is one of the largest Roman arenas",
+    "The 2011 Arab Spring began here",
+    "Its Matmata troglodyte homes are dug into the ground"
+   ]
+  },
+  {
+   "alpha3": "TUR",
+   "name": "Turkey",
+   "facts": [
+    "Its largest city straddles two continents across the Bosphorus",
+    "Santa Claus's inspiration, St Nicholas, was a bishop in its town of Myra",
+    "Tulips were brought to the Netherlands from here"
+   ]
+  },
+  {
+   "alpha3": "TZA",
+   "name": "Tanzania",
+   "facts": [
+    "Freddie Mercury was born on its island of Zanzibar",
+    "The Serengeti and the Ngorongoro Crater lie here",
+    "Lake Victoria, Lake Tanganyika and Lake Malawi all touch it"
+   ]
+  },
+  {
+   "alpha3": "UGA",
+   "name": "Uganda",
+   "facts": [
+    "About half of the world's mountain gorillas live in its Bwindi forest",
+    "Winston Churchill called it the Pearl of Africa",
+    "Lake Victoria takes up a large part of its south"
+   ]
+  },
+  {
+   "alpha3": "UKR",
+   "name": "Ukraine",
+   "facts": [
+    "It is the largest country entirely within Europe",
+    "Its Antonov An-225 was the largest plane ever built",
+    "Its flag's blue and yellow stand for sky and wheat fields"
+   ]
+  },
+  {
+   "alpha3": "UNK",
+   "name": "Kosovo",
+   "facts": [
+    "It uses the euro without being in the EU",
+    "Its flag shows a map of the country with six white stars",
+    "Its Newborn monument was unveiled on the day of independence"
+   ]
+  },
+  {
+   "alpha3": "URY",
+   "name": "Uruguay",
+   "facts": [
+    "It was the first country to fully legalize cannabis, in 2013",
+    "It has more cows than people",
+    "Its people drink mate from gourds everywhere they go"
+   ]
+  },
+  {
+   "alpha3": "USA",
+   "name": "United States",
+   "facts": [
+    "Its flag has 50 stars, one for each state",
+    "Yellowstone was the world's first national park, in 1872",
+    "It has the world's largest economy"
+   ]
+  },
+  {
+   "alpha3": "UZB",
+   "name": "Uzbekistan",
+   "facts": [
+    "It is one of only two doubly landlocked countries in the world",
+    "Its Silk Road cities include Bukhara and Khiva",
+    "The Aral Sea on its border has mostly dried up"
+   ]
+  },
+  {
+   "alpha3": "VAT",
+   "name": "Vatican City",
+   "facts": [
+    "It is the smallest country in the world",
+    "The Swiss Guard has protected it since 1506",
+    "Michelangelo painted the Sistine Chapel ceiling here"
+   ]
+  },
+  {
+   "alpha3": "VEN",
+   "name": "Venezuela",
+   "facts": [
+    "It has the largest proven oil reserves in the world",
+    "Lightning strikes almost every night over Lake Maracaibo",
+    "Its name means \"little Venice\""
+   ]
+  },
+  {
+   "alpha3": "VNM",
+   "name": "Vietnam",
+   "facts": [
+    "It is the world's second-largest coffee exporter",
+    "Son Doong is the largest known cave in the world",
+    "Pho, a noodle soup, is its national dish"
+   ]
+  },
+  {
+   "alpha3": "YEM",
+   "name": "Yemen",
+   "facts": [
+    "Mocha coffee is named after its port of al-Makha",
+    "The Queen of Sheba's kingdom is linked to its ancient Saba",
+    "Its old capital's tower houses are decorated with white gypsum"
+   ]
+  },
+  {
+   "alpha3": "ZAF",
+   "name": "South Africa",
+   "facts": [
+    "It has three capital cities, one for each branch of government",
+    "It has 12 official languages",
+    "It hosted the first FIFA World Cup in Africa, in 2010"
+   ]
+  },
+  {
+   "alpha3": "ZMB",
+   "name": "Zambia",
+   "facts": [
+    "It shares Victoria Falls with Zimbabwe",
+    "Lake Kariba, shared with Zimbabwe, is the largest artificial lake by volume",
+    "Its South Luangwa park is famous for walking safaris"
+   ]
+  },
+  {
+   "alpha3": "ZWE",
+   "name": "Zimbabwe",
+   "facts": [
+    "Its central bank once printed a 100-trillion-dollar note",
+    "It shares Victoria Falls with Zambia",
+    "Its Hwange National Park has one of Africa's largest elephant herds"
+   ]
+  }
+ ]
+}

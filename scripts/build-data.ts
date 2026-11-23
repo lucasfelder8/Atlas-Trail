@@ -266,7 +266,11 @@ function loadDraft<T extends { alpha3: string }>(file: string): Map<string, T> {
 }
 const landmarks = loadDraft<{ alpha3: string; hint: string }>('landmarks.json');
 const religions = loadDraft<{ alpha3: string } & Religion>('religion.json');
+const funFacts = loadDraft<{ alpha3: string; facts: string[] }>('funfacts.json');
 console.log(`\n=== CONTENT FILES ===`);
+const missingF = [...componentOf.keys()].filter((c) => !funFacts.get(c)?.facts.length);
+console.log(`funfacts:  ${funFacts.size} entries, missing for playable: ${missingF.map(nm).join(', ') || 'none'}`);
+for (const k of funFacts.keys()) if (!componentOf.has(k)) console.log(`  fun-fact entry for non-playable code ${k}`);
 const missingL = [...componentOf.keys()].filter((c) => !landmarks.has(c));
 const missingR = [...componentOf.keys()].filter((c) => !religions.has(c));
 console.log(`landmarks: ${landmarks.size} entries, missing for playable: ${missingL.map(nm).join(', ') || 'none'}`);
@@ -308,6 +312,7 @@ for (const s of shapes) {
     facts: s.rest ? factsOf(s) : null,
     religion: rel ? { religion: rel.religion, basis: rel.basis } : null,
     landmark: landmarks.get(s.id)?.hint ?? null,
+    ...(componentOf.has(s.id) && funFacts.get(s.id)?.facts.length ? { funFacts: funFacts.get(s.id)!.facts } : {}),
   };
 }
 

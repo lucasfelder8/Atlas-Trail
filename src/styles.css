@@ -104,6 +104,9 @@ button { font: inherit; color: inherit; cursor: pointer; }
   font-size: 10px; font-weight: 800; letter-spacing: 0.05em; color: #1d232a; background: var(--selected);
   border-radius: 999px; padding: 2px 7px;
 }
+.hint.fact { font-weight: 550; border-color: var(--selected); border-style: dashed; }
+.hint.fact.latest { border-style: solid; }
+.hint-reveal.fact .rv-text { font-size: 17px; font-weight: 700; }
 .hint.locked { background: transparent; border: 1px dashed var(--border-excluded); color: var(--muted); font-weight: 500; font-size: 13px; padding: 6px 12px; }
 @keyframes hint-in { from { transform: translateY(-6px) scale(0.98); opacity: 0; } }
 

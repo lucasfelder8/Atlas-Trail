@@ -7,7 +7,10 @@ import { playableGraph, shortestPath } from './logic/graph.ts';
 import { parGraph } from './logic/par.ts';
 import { visitedSet, tap, targetIsAdjacent } from './logic/legality.ts';
 import { neighbors } from './logic/graph.ts';
-import { buildHints, revealedCount, canShowOnMap, countriesMatching, type Hint, type HintKind } from './logic/hints.ts';
+import {
+  buildHints, revealedCount, canShowOnMap, countriesMatching, funFactsUnlocked, funFactOrder, funFactAt,
+  type Hint, type HintKind,
+} from './logic/hints.ts';
 import { cardFor, matchLevel } from './logic/infoCard.ts';
 import { shareSquares, shareText, HELPER_EMOJI } from './logic/scoring.ts';
 import { laDate, puzzleNumber, msUntilNextPuzzle, formatCountdown } from './logic/daily.ts';
@@ -94,10 +97,14 @@ async function main() {
 
   const target = data.countries[puzzle.target];
   const hints: Hint[] = buildHints(target, puzzle.par, ctx);
+  // Bonus facts after par. Daily puzzles rotate by puzzle number; practice by the start country.
+  const factOrder = funFactOrder(target, practice ? game.start.charCodeAt(0) + game.start.charCodeAt(1) : number);
+  const factsUnlocked = () => (factOrder.length ? funFactsUnlocked(puzzle.par, game.guesses.length) : 0);
   const nameOf = (id: string) => data.countries[id].name;
   let stats: Stats = loadStats();
   let selected: string | null = null;
   let shownHints = -1;
+  let shownFacts = -1;
   /** Hint index currently shown on the map by the helper, or null. */
   let helperHint: number | null = null;
   let helperSet: ReadonlySet<string> = new Set();
@@ -141,7 +148,10 @@ async function main() {
     const unlocked = n > revealedCount(puzzle.par, game.guesses.length - 1, false);
     selected = null;
     render();
-    if (unlocked) revealHint(n - 1, `Not ${nameOf(id)}`); else toast('Not it. Keep going');
+    const facts = factsUnlocked();
+    if (unlocked) revealHint(n - 1, `Not ${nameOf(id)}`);
+    else if (facts > 0) revealFact(facts - 1, `Not ${nameOf(id)}`);
+    else toast('Not it. Keep going');
     if (!map.isInView(id)) map.zoomTo([...visited()]);
   }
 
@@ -165,6 +175,27 @@ async function main() {
       <span class="rv-tap">Tap anywhere to close</span>`;
     el.setAttribute('aria-label', `${label}: ${h.text}`);
     clearTimeout(hideTimer); // a pending fade-out from the previous hint must not hide this one
+    el.hidden = false;
+    clearTimeout(revealTimer);
+    revealTimer = window.setTimeout(hideReveal, ms);
+  }
+  /** Pop up the i-th unlocked fun fact (0-based; wraps around the list). */
+  function revealFact(i: number, lead?: string) {
+    const text = funFactAt(factOrder, i);
+    if (!text) return;
+    const el = $<HTMLButtonElement>('hint-reveal');
+    const label = `Fun fact · ${(i % factOrder.length) + 1} of ${factOrder.length}`;
+    const ms = 5000;
+    el.className = 'hint-reveal fact';
+    el.innerHTML = `
+      ${lead ? `<span class="rv-tap" style="margin:0 0 8px">${esc(lead)}.</span>` : ''}
+      <span class="rv-label">${label}</span>
+      <span class="rv-ico" aria-hidden="true">✨</span>
+      <span class="rv-text">${esc(text)}</span>
+      <span class="rv-bar" style="animation-duration:${ms}ms"></span>
+      <span class="rv-tap">Tap anywhere to close</span>`;
+    el.setAttribute('aria-label', `${label}: ${text}`);
+    clearTimeout(hideTimer);
     el.hidden = false;
     clearTimeout(revealTimer);
     revealTimer = window.setTimeout(hideReveal, ms);
@@ -292,13 +323,26 @@ async function main() {
       items.push(`<li class="hint locked"><span class="ico" aria-hidden="true">🔒</span>
         <span class="txt">Your next guess unlocks ${next}${left > 1 ? ` · ${left} to go, landmark last` : ''}</span></li>`);
     }
+    // Bonus fun facts: every one unlocked so far (each listed once; reveals keep cycling).
+    const facts = factsUnlocked();
+    const shown = Math.min(facts, factOrder.length);
+    for (let i = 0; i < shown; i++) {
+      const latest = !over() && i === (facts - 1) % factOrder.length;
+      items.push(`<li class="hint fact${latest ? ' latest' : ''}"><span class="ico" aria-hidden="true">✨</span>
+        <span class="txt"><span class="k">Fun fact:</span> ${esc(factOrder[i])}</span></li>`);
+    }
+    if (n === puzzle.par && !over() && factOrder.length) {
+      items.push(`<li class="hint locked"><span class="ico" aria-hidden="true">✨</span>
+        <span class="txt">Still stuck? Each extra guess unlocks a fun fact about the destination</span></li>`);
+    }
     $('hint-list').innerHTML = items.join('');
     for (const b of document.querySelectorAll<HTMLButtonElement>('#hint-list [data-helper]'))
       b.addEventListener('click', () => onHelperButton(Number(b.dataset.helper)));
     $('hint-count').textContent = `${n} of ${puzzle.par}`;
     const list = $('hint-list');
-    if (fresh) list.scrollTop = list.scrollHeight;
+    if (fresh || (shownFacts >= 0 && facts > shownFacts)) list.scrollTop = list.scrollHeight;
     shownHints = n;
+    shownFacts = facts;
     const collapsed = !!prefs.hintsCollapsed;
     document.querySelector('.hints')!.classList.toggle('collapsed', collapsed);
     $('hints-toggle').setAttribute('aria-expanded', String(!collapsed));
@@ -319,7 +363,8 @@ async function main() {
           <span class="sr-only">${r.match ? 'matches the destination' : 'does not match the destination'}</span></span>
         <span class="cmp">${r.match ? 'Same as the destination' : `Destination: ${esc(r.targetValue ?? '')}`}</span></li>`;
     }).join('');
-    const bordersTarget = !over() && neighbors(g, game.target).includes(model.id);
+    // Only reveal "borders the destination" for countries already on the trail, never before guessing.
+    const bordersTarget = !over() && vis.has(model.id) && neighbors(g, game.target).includes(model.id);
     const tag = model.id === game.start ? 'Start' : vis.has(model.id) ? 'Visited' : '';
     const summary = model.checkable
       ? `<b>${model.matches} of ${model.checkable}</b> ${model.checkable === 1 ? 'hint matches' : 'hints match'} the destination`
@@ -327,7 +372,7 @@ async function main() {
     el.innerHTML = `
       <div class="card-head"><h2>${esc(model.name)}${tag ? `<span class="tag">${tag}</span>` : ''}</h2>
         <button class="close" aria-label="Close">×</button></div>
-      ${bordersTarget ? `<p class="borders-banner"><span aria-hidden="true">🎯</span> Borders the destination${vis.has(model.id) ? '' : ': guess it and the destination is right next door'}</p>` : ''}
+      ${bordersTarget ? `<p class="borders-banner"><span aria-hidden="true">🎯</span> Borders the destination</p>` : ''}
       <p class="summary">${summary}</p>
       <ul class="rows">${rows}</ul>
       ${model.showGuessButton ? `<button class="btn" id="guess-btn">Guess ${esc(model.name)}</button>` : ''}`;

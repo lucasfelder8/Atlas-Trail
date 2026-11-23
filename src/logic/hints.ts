@@ -196,6 +196,27 @@ export function revealedCount(par: number, guessCount: number, gameOver: boolean
   return gameOver ? par : Math.min(par, 1 + guessCount);
 }
 
+// ---------------------------------------------------------------- bonus fun facts
+
+/** How many fun facts are unlocked: one per wrong guess once all `par` hints are showing. */
+export function funFactsUnlocked(par: number, guessCount: number): number {
+  return Math.max(0, guessCount - (par - 1));
+}
+
+/**
+ * The fun facts in reveal order for this puzzle, cycled. The list is rotated by the puzzle number so a
+ * target that comes back later opens with a different fact. `unlocked` beyond the list length wraps around.
+ */
+export function funFactOrder(target: Country, puzzleNumber: number): string[] {
+  const f = target.funFacts ?? [];
+  if (!f.length) return [];
+  const k = ((puzzleNumber % f.length) + f.length) % f.length;
+  return [...f.slice(k), ...f.slice(0, k)];
+}
+
+/** The fact revealed by the i-th unlock (0-based), wrapping around the list. */
+export const funFactAt = (order: string[], i: number): string | null => (order.length ? order[i % order.length] : null);
+
 // ---------------------------------------------------------------- hint helper
 
 /** Hints that can be shown as a set of countries on the map (everything except the free-text landmark). */

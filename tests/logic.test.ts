@@ -190,6 +190,23 @@ test('hints that would contain the target name are skipped', () => {
   assert.ok(!buildHints(data.countries.E, 8, ctx).some((h) => h.kind === 'language'));
 });
 
+test('fun facts: one per wrong guess after par, cycled, rotated per puzzle, never leaking', async () => {
+  const { funFactsUnlocked, funFactOrder, funFactAt } = await import('../src/logic/hints.ts');
+  // par 4: hints are full after 3 guesses; the 4th, 5th... wrong guess unlock facts.
+  assert.deepEqual([0, 1, 2, 3, 4, 5, 6].map((k) => funFactsUnlocked(4, k)), [0, 0, 0, 0, 1, 2, 3]);
+  const t = country('T', [], { funFacts: ['a', 'b', 'c'] });
+  assert.deepEqual(funFactOrder(t, 0), ['a', 'b', 'c']);
+  assert.deepEqual(funFactOrder(t, 4), ['b', 'c', 'a'], 'rotated by puzzle number');
+  const order = funFactOrder(t, 0);
+  assert.deepEqual([0, 1, 2, 3, 4].map((i) => funFactAt(order, i)), ['a', 'b', 'c', 'a', 'b'], 'wraps around');
+  assert.equal(funFactAt(funFactOrder(country('U', []), 1), 0), null, 'no facts: nothing to show');
+  for (const c of Object.values(real().countries)) {
+    if (!c.playable) continue;
+    assert.ok(c.funFacts?.length, `${c.name} has fun facts`);
+    for (const f of c.funFacts!) assert.ok(!leaksTarget(f, c), `${c.name}: "${f}" leaks the name or capital`);
+  }
+});
+
 test('give-away languages (Korean, Chinese, Thai) come late; shared ones (German) stay early', () => {
   const data = real();
   const ctx = { countries: data.countries };

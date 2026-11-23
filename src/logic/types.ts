@@ -43,6 +43,8 @@ export interface Country {
   facts: Facts | null;
   religion: Religion | null;
   landmark: string | null;
+  /** Bonus fun facts, revealed one per guess after par and cycled (data/funfacts.json). */
+  funFacts?: string[];
 }
 
 export interface CountryData {
