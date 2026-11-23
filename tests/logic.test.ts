@@ -4,11 +4,11 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { playableGraph, distance, shortestPath, type Graph } from '../src/logic/graph.ts';
 import { isLegal, tap, targetIsAdjacent, visitedSet, TOAST_ILLEGAL, TOAST_EXCLUDED } from '../src/logic/legality.ts';
-import { buildHints, evaluateHint, revealedCount, leaksTarget, type Hint } from '../src/logic/hints.ts';
+import { buildHints, evaluateHint, revealedCount, leaksTarget, countriesMatching, canShowOnMap, type Hint } from '../src/logic/hints.ts';
 import { cardFor } from '../src/logic/infoCard.ts';
 import { shareSquares, shareText, par } from '../src/logic/scoring.ts';
 import { laDate, puzzleNumber, msUntilNextPuzzle, addDays } from '../src/logic/daily.ts';
-import { applyGuess, emptyStats, giveUp, newGame, recordResult, displayStreak, averageGuesses, winRate } from '../src/logic/state.ts';
+import { applyGuess, emptyStats, giveUp, useHelper, helperCount, newGame, recordResult, displayStreak, averageGuesses, winRate } from '../src/logic/state.ts';
 import type { Country, CountryData, Facts, Puzzle } from '../src/logic/types.ts';
 import { GAME_NAME } from '../config/game.config.ts';
 
@@ -212,6 +212,44 @@ test('share squares: green on a shortest route, yellow for detours, last always 
   const sq = shareSquares(g, 'DEU', 'ESP', ['POL', 'FRA', 'ESP']);
   assert.deepEqual(sq, ['🟨', '🟩', '🟩']);
   assert.equal(shareText(7, 3, 2, sq).split('\n').slice(0, 2).join('\n'), `${GAME_NAME} #7 - 3 guesses (par 2)\n🟨🟩🟩`);
+});
+
+test('share text appends a lightbulb only when the helper was used', () => {
+  const sq = ['🟩', '🟨', '🟩'];
+  assert.equal(shareText(7, 3, 3, sq).split('\n')[1], '🟩🟨🟩');
+  assert.equal(shareText(7, 3, 3, sq, 1).split('\n')[1], '🟩🟨🟩 💡');
+  assert.equal(shareText(7, 3, 3, sq, 3).split('\n')[1], '🟩🟨🟩 💡💡💡');
+});
+
+test('each distinct hint looked up costs one lightbulb; repeats are free; finished games cannot be marked', () => {
+  const g0 = newGame(5, 'A', 'B');
+  assert.equal(helperCount(g0), 0);
+  const g1 = useHelper(useHelper(g0, 1), 1);
+  assert.equal(helperCount(g1), 1, 'same hint twice = one bulb');
+  const g2 = useHelper(g1, 2);
+  assert.equal(helperCount(g2), 2);
+  assert.equal(helperCount(useHelper(giveUp(g0), 1)), 0);
+  const won = applyGuess(g2, 'B');
+  assert.equal(recordResult(emptyStats(), won, 1).results[5].helpers, 2);
+  assert.equal(recordResult(emptyStats(), applyGuess(g0, 'B'), 1).results[5].helpers, undefined);
+});
+
+test('countriesMatching agrees with the card check marks and includes the target', () => {
+  const data = real();
+  const ctx = { countries: data.countries };
+  const t = data.countries.EGY;
+  const hints = buildHints(t, 4, ctx);
+  assert.ok(!canShowOnMap(hints[hints.length - 1]), 'the landmark has no map set');
+  assert.deepEqual(countriesMatching(hints[hints.length - 1], t, ctx), []);
+  for (const h of hints.filter(canShowOnMap)) {
+    const ids = countriesMatching(h, t, ctx);
+    assert.ok(ids.includes(t.id), `${h.text}: target must fit its own hint`);
+    for (const id of ids) assert.ok(data.countries[id].playable);
+    for (const c of Object.values(data.countries).filter((x) => x.playable && x.facts))
+      assert.equal(ids.includes(c.id), evaluateHint(h, t, c, ctx).match === true, `${h.text} / ${c.name}`);
+  }
+  const arabic = countriesMatching({ kind: 'language', text: 'Official language: Arabic', param: 'Arabic' }, t, ctx);
+  assert.ok(arabic.includes('SAU') && arabic.includes('MAR') && !arabic.includes('FRA'));
 });
 
 // ---------------------------------------------------------------- daily

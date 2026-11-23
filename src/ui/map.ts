@@ -21,6 +21,8 @@ export interface MapState {
   shades: ReadonlyMap<string, number>;
   /** Visited countries that touch the (hidden) destination: outlined so they stand out. */
   borderTarget: ReadonlySet<string>;
+  /** Hint helper: every country that fits the chosen hint, drawn in yellow. Empty when the helper is off. */
+  hinted?: ReadonlySet<string>;
 }
 
 const HIT_RADIUS_PX = 11; // minimum invisible tap target around tiny countries
@@ -142,6 +144,7 @@ export class WorldMap {
       .attr('data-shade', (f) => (visited.has(f.properties.id) ? String(state.shades.get(f.properties.id) ?? 0) : null))
       .classed('start', (f) => f.properties.id === start)
       .classed('selected', (f) => f.properties.id === selected)
+      .classed('hinted', (f) => !!state.hinted?.has(f.properties.id))
       .classed('borders-target', (f) => state.borderTarget.has(f.properties.id))
       .classed('target', (f) => f.properties.id === target);
     // Bring the selected shape to the front so its outline is not hidden by neighbours.
