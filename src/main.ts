@@ -144,6 +144,7 @@ async function main() {
 
   // ------------------------------------------------------------ big on-map hint reveal
   let revealTimer: number | undefined;
+  let hideTimer: number | undefined;
   /** Pop the hint up in the middle of the map; it fades after a few seconds or on tap. */
   function revealHint(i: number, lead?: string) {
     const h = hints[i];
@@ -160,6 +161,7 @@ async function main() {
       <span class="rv-bar" style="animation-duration:${ms}ms"></span>
       <span class="rv-tap">Tap anywhere to close</span>`;
     el.setAttribute('aria-label', `${label}: ${h.text}`);
+    clearTimeout(hideTimer); // a pending fade-out from the previous hint must not hide this one
     el.hidden = false;
     clearTimeout(revealTimer);
     revealTimer = window.setTimeout(hideReveal, ms);
@@ -171,7 +173,7 @@ async function main() {
     if (el.hidden) return;
     clearTimeout(revealTimer);
     el.classList.add('out');
-    window.setTimeout(() => { el.hidden = true; el.classList.remove('out'); }, 280);
+    hideTimer = window.setTimeout(() => { el.hidden = true; el.classList.remove('out'); }, 280);
   }
 
   function finish() {
