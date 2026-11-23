@@ -11,6 +11,8 @@ export interface PickOptions {
   requireRouteMatch: boolean;
   /** Targets not allowed this time (e.g. used recently). */
   avoidTargets?: ReadonlySet<string>;
+  /** Starts not allowed this time (e.g. countries that appeared recently). */
+  avoidStarts?: ReadonlySet<string>;
 }
 
 /** Countries that can be targets: a landmark that doesn't leak, and enough hints for minPar. */
@@ -29,7 +31,7 @@ export function pickPuzzle(
     const target = pick(rand, targets);
     if (o.avoidTargets?.has(target)) continue;
     const sameComponent = [...distances(g, target).keys()].filter((s) => s !== target).sort();
-    const starts = sameComponent.filter((s) => { const p = parOf(g, s, target); return p >= o.minPar && p <= o.maxPar; });
+    const starts = sameComponent.filter((s) => { if (o.avoidStarts?.has(s)) return false; const p = parOf(g, s, target); return p >= o.minPar && p <= o.maxPar; });
     if (!starts.length) continue;
     const start = pick(rand, starts);
     const par = parOf(g, start, target);

@@ -213,6 +213,10 @@ dialog h2 { margin: 0 0 8px; font-size: 21px; padding-right: 32px; }
 .dlg-close { position: absolute; top: 12px; right: 12px; border: 0; background: var(--surface-2); width: 32px; height: 32px; border-radius: 50%; font-size: 20px; line-height: 1; color: var(--muted); }
 .dlg-actions { display: flex; gap: 8px; margin-top: 14px; }
 .help { padding-left: 20px; margin: 0; display: grid; gap: 8px; }
+.not-in-play { margin-top: 12px; font-size: 13px; }
+.not-in-play summary { cursor: pointer; font-weight: 600; }
+.not-in-play p { margin: 6px 0 0; }
+#not-in-play-list { max-height: 140px; overflow-y: auto; line-height: 1.5; }
 
 .end-route { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; font-size: 13px; margin: 6px 0 4px; }
 .end-route span.c { background: var(--surface-2); border-radius: 999px; padding: 2px 8px; font-weight: 600; }

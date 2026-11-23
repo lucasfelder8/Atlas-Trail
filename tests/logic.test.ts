@@ -190,6 +190,19 @@ test('hints that would contain the target name are skipped', () => {
   assert.ok(!buildHints(data.countries.E, 8, ctx).some((h) => h.kind === 'language'));
 });
 
+test('give-away languages (Korean, Chinese, Thai) come late; shared ones (German) stay early', () => {
+  const data = real();
+  const ctx = { countries: data.countries };
+  const kinds = (id: string) => buildHints(data.countries[id], 8, ctx).map((h) => h.kind);
+  assert.ok(!kinds('RUS').includes('language'), '"Russian" names Russia, so it is never a hint for Russia');
+  for (const id of ['KOR', 'CHN', 'THA']) {
+    const k = kinds(id);
+    assert.ok(k.includes('language'), `${id} still gets a language hint at par 8`);
+    assert.ok(k.indexOf('language') > k.indexOf('driving'), `${id}: language after driving`);
+  }
+  assert.equal(kinds('DEU')[1], 'language', 'German is shared by several countries, so it stays second');
+});
+
 // ---------------------------------------------------------------- scoring / share
 
 test('share squares: green on a shortest route, yellow for detours, last always green', () => {

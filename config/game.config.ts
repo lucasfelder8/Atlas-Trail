@@ -27,6 +27,8 @@ export const REQUIRE_ROUTE_MATCH = true;
 export const PAR_AVOIDS = ['RUS', 'CHN'];
 /** A target may not repeat within this many days. */
 export const TARGET_REPEAT_DAYS = 60;
+/** A country may not appear at all (as start or target) within this many days of its last appearance. */
+export const APPEARANCE_GAP_DAYS = 14;
 
 /** Countries with land borders that are nonetheless excluded from play (alpha-3). */
 export const EXCLUDED = ['IDN', 'PNG', 'TLS', 'BRN', 'IRL', 'GBR', 'HTI', 'DOM'];
@@ -76,6 +78,15 @@ export const HINT_ORDER = [
   'capitalLetter',
   'area',
 ] as const;
+
+/**
+ * Give-away languages are revealed late: the language hint moves to just before the
+ * LATE_LANGUAGE_BEFORE hint (so short puzzles may not show it at all). A language counts as a give-away
+ * when at most LATE_LANGUAGE_MAX_COUNTRIES playable countries speak it (Korean, Chinese, Thai…).
+ * Languages named after the target (Russian for Russia) are never shown: they leak the name.
+ */
+export const LATE_LANGUAGE_MAX_COUNTRIES = 3;
+export const LATE_LANGUAGE_BEFORE: (typeof HINT_ORDER)[number] = 'population';
 
 /** Well-known reference countries for relative population/area hints, with display names. */
 export const REFERENCE_COUNTRIES: Record<string, string> = {

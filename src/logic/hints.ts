@@ -1,4 +1,6 @@
-import { HINT_ORDER, REFERENCE_COUNTRIES, DEFAULT_STATUS } from '../../config/game.config.ts';
+import {
+  HINT_ORDER, REFERENCE_COUNTRIES, DEFAULT_STATUS, LATE_LANGUAGE_MAX_COUNTRIES, LATE_LANGUAGE_BEFORE,
+} from '../../config/game.config.ts';
 import type { Country, Facts } from './types.ts';
 
 export type MiddleKind = (typeof HINT_ORDER)[number];
@@ -152,12 +154,27 @@ function middleHint(kind: MiddleKind, t: Country, ctx: HintContext): Hint | null
   }
 }
 
-/** All applicable middle hints for a target, in HINT_ORDER priority. */
+/** A language that points straight at one or a few countries (see LATE_LANGUAGE_MAX_COUNTRIES). */
+export function isGiveawayLanguage(lang: string, ctx: HintContext): boolean {
+  return (languagePopularity(ctx).get(lang) ?? 0) <= LATE_LANGUAGE_MAX_COUNTRIES;
+}
+
+/**
+ * All applicable middle hints for a target, in HINT_ORDER priority. A give-away language hint is
+ * moved late, just before the LATE_LANGUAGE_BEFORE hint (or to the end if there is none).
+ */
 export function middleHints(target: Country, ctx: HintContext, order: readonly MiddleKind[] = HINT_ORDER): Hint[] {
   const out: Hint[] = [];
+  let late: Hint | null = null;
   for (const k of order) {
     const h = middleHint(k, target, ctx);
-    if (h) out.push(h);
+    if (!h) continue;
+    if (h.kind === 'language' && isGiveawayLanguage(h.param!, ctx)) late = h;
+    else out.push(h);
+  }
+  if (late) {
+    const i = out.findIndex((h) => h.kind === LATE_LANGUAGE_BEFORE);
+    out.splice(i < 0 ? out.length : i, 0, late);
   }
   return out;
 }

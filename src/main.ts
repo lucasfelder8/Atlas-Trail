@@ -441,6 +441,11 @@ async function main() {
   }
   $('stats-btn').addEventListener('click', showStats);
   $('help-btn').addEventListener('click', () => openDialog('help-dlg'));
+  $('not-in-play-list').textContent = Object.values(data.countries)
+    .filter((c) => !c.playable && c.facts && c.id !== 'ATA')
+    .map((c) => c.name)
+    .sort((a, b) => a.localeCompare(b))
+    .join(', ');
   $('focus-btn').addEventListener('click', () => map.zoomTo([...visited()]));
   $('world-btn').addEventListener('click', () => map.resetZoom());
   $('hints-toggle').addEventListener('click', () => {
@@ -449,7 +454,14 @@ async function main() {
     render();
   });
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && selected && !document.querySelector('dialog[open]')) { selected = null; render(); }
+    if (document.querySelector('dialog[open]')) return;
+    if (e.key === 'Escape' && selected) { selected = null; render(); }
+    // Enter guesses the selected country (unless a focused button/input will handle Enter itself).
+    const onControl = e.target instanceof Element && !!e.target.closest('button, input, textarea, a, summary');
+    if (e.key === 'Enter' && selected && !onControl) {
+      e.preventDefault();
+      onGuess(selected);
+    }
   });
 
   render();
