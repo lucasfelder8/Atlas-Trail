@@ -37,8 +37,11 @@ export function shareSquares(
 export const HELPER_EMOJI = '💡';
 
 /** helpers = how many hints the player looked up on the map: one 💡 each follows the squares. */
-export function shareText(puzzleNumber: number | null, guessCount: number, parValue: number, squares: string[], helpers = 0): string {
+export function shareText(
+  puzzleNumber: number | null, guessCount: number, parValue: number, squares: string[], helpers = 0, difficulty = '',
+): string {
   const word = guessCount === 1 ? 'guess' : 'guesses';
-  const title = puzzleNumber === null ? `${GAME_NAME} (practice)` : `${GAME_NAME} #${puzzleNumber}`;
+  const label = difficulty ? ` ${difficulty}` : '';
+  const title = puzzleNumber === null ? `${GAME_NAME} (practice${label ? ',' + label : ''})` : `${GAME_NAME} #${puzzleNumber}${label}`;
   return `${title} - ${guessCount} ${word} (par ${parValue})\n${squares.join('')}${helpers > 0 ? ` ${HELPER_EMOJI.repeat(helpers)}` : ''}${SHARE_URL ? `\n${SHARE_URL}` : ''}`;
 }

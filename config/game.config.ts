@@ -15,6 +15,11 @@ export const TIME_ZONE = 'America/Los_Angeles';
 export const MIN_PAR = 3;
 export const MAX_PAR = 8;
 /**
+ * Three daily puzzles, one per difficulty, each with its own par range (inclusive). Practice uses
+ * the same bands. Together they must cover MIN_PAR..MAX_PAR.
+ */
+export const DAILY_DIFFICULTIES = { easy: [3, 4], medium: [5, 6], hard: [7, 8] } as const;
+/**
  * Reject puzzles where no country on any shortest route (other than the target) matches
  * a single checkable hint: those play as "✗ on every card" and feel broken.
  */
@@ -26,9 +31,11 @@ export const REQUIRE_ROUTE_MATCH = true;
  */
 export const PAR_AVOIDS = ['RUS', 'CHN'];
 /** A target may not repeat within this many days. */
-export const TARGET_REPEAT_DAYS = 60;
+// With three destinations a day from ~150 targets, 45 days is about the longest gap that still works
+// (60 runs out of hard puzzles in the second month).
+export const TARGET_REPEAT_DAYS = 45;
 /** A country may not appear at all (as start or target) within this many days of its last appearance. */
-export const APPEARANCE_GAP_DAYS = 14;
+export const APPEARANCE_GAP_DAYS = 7;
 
 /** Countries with land borders that are nonetheless excluded from play (alpha-3). */
 export const EXCLUDED = ['IDN', 'PNG', 'TLS', 'BRN', 'IRL', 'GBR', 'HTI', 'DOM'];

@@ -2,6 +2,7 @@
 // Does nothing unless SUPABASE_URL and SUPABASE_ANON_KEY are set in config/game.config.ts.
 import { SUPABASE_URL, SUPABASE_ANON_KEY } from '../../config/game.config.ts';
 import type { GameState } from '../logic/state.ts';
+import type { DailyDifficulty } from '../logic/types.ts';
 
 const ID_KEY = 'mystery-destination:player-id';
 
@@ -19,11 +20,12 @@ export function playerId(): string {
 }
 
 /** Safe to call repeatedly: the database ignores a second row for the same player and puzzle. */
-export function submitResult(game: GameState, par: number): void {
+export function submitResult(game: GameState, par: number, difficulty: DailyDifficulty): void {
   if (!SUPABASE_URL || !SUPABASE_ANON_KEY || game.status === 'playing') return;
   const row = {
     player_id: playerId(),
     puzzle_number: game.number,
+    difficulty,
     status: game.status,
     guesses: game.guesses.length,
     par,
@@ -31,7 +33,7 @@ export function submitResult(game: GameState, par: number): void {
     target: game.target,
     route: game.guesses,
   };
-  fetch(`${SUPABASE_URL}/rest/v1/results?on_conflict=player_id,puzzle_number`, {
+  fetch(`${SUPABASE_URL}/rest/v1/results?on_conflict=player_id,puzzle_number,difficulty`, {
     method: 'POST',
     headers: {
       apikey: SUPABASE_ANON_KEY,

@@ -207,6 +207,55 @@ test('fun facts: one per wrong guess after par, cycled, rotated per puzzle, neve
   }
 });
 
+test('search: prefix first, aliases, accents ignored, legal before far, playable only', async () => {
+  const { searchCountries, difficultyOf } = await import('../src/logic/search.ts');
+  const data = real();
+  const g = playableGraph(data);
+  const names = (q: string, vis = new Set(['DEU'])) => searchCountries(q, data.countries, g, vis).map((h) => h.name);
+  assert.equal(names('ger')[0], 'Germany');
+  assert.ok(names('ivory').includes('Ivory Coast'));
+  assert.ok(names('cote').includes('Ivory Coast'), 'alias, accent-insensitive');
+  assert.ok(names('czech').includes('Czechia'), 'alias');
+  assert.ok(!names('jap').includes('Japan'), 'non-playable countries never show');
+  assert.deepEqual(names(''), []);
+  // From Germany, Poland is legal and Portugal is not: Poland ranks first among "Po..." names.
+  const po = searchCountries('po', data.countries, g, new Set(['DEU']));
+  assert.equal(po[0].name, 'Poland');
+  assert.ok(po[0].legal && !po.find((h) => h.name === 'Portugal')!.legal);
+  assert.deepEqual([3, 4, 5, 6, 7, 8].map(difficultyOf), ['Easy', 'Easy', 'Medium', 'Medium', 'Hard', 'Hard']);
+});
+
+test('three daily puzzles: easy/medium/hard each day, par in band, no shared countries that day', async () => {
+  const { DAILY_DIFFICULTIES } = await import('../config/game.config.ts');
+  const ps = realPuzzles();
+  assert.equal(ps.length % 3, 0);
+  for (let i = 0; i < ps.length; i += 3) {
+    const day = ps.slice(i, i + 3);
+    assert.deepEqual(day.map((p) => p.difficulty), ['easy', 'medium', 'hard'], `day ${day[0].number}`);
+    assert.ok(day.every((p) => p.number === day[0].number && p.date === day[0].date));
+    for (const p of day) {
+      const [lo, hi] = DAILY_DIFFICULTIES[p.difficulty];
+      assert.ok(p.par >= lo && p.par <= hi, `#${p.number} ${p.difficulty} par ${p.par}`);
+    }
+    const ids = day.flatMap((p) => [p.start, p.target]);
+    assert.equal(new Set(ids).size, ids.length, `day ${day[0].number} shares a country`);
+  }
+  assert.equal(shareText(4, 5, 7, ['🟩'], 0, 'Hard').split('\n')[0], `${GAME_NAME} #4 Hard - 5 guesses (par 7)`);
+});
+
+test('explore rows list every hint fact for a country', async () => {
+  const { exploreRows } = await import('../src/explore.ts');
+  const data = real();
+  const rows = exploreRows(data.countries.CHE, data);
+  const get = (label: string) => rows.find(([, k]) => k.startsWith(label))?.[2] ?? '';
+  assert.equal(get('Landlocked'), 'Yes');
+  assert.ok(get('Language').includes('German'));
+  assert.ok(get('Borders').includes('Italy'));
+  assert.ok(get('Capital').length > 0);
+  assert.ok(rows.some(([, k]) => k === 'Religion'));
+  assert.ok(exploreRows(data.countries.JPN, data).length > 5, 'countries not in play still have facts');
+});
+
 test('give-away languages (Korean, Chinese, Thai) come late; shared ones (German) stay early', () => {
   const data = real();
   const ctx = { countries: data.countries };

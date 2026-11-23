@@ -12,6 +12,12 @@
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="%GAME_NAME%" />
     <link rel="stylesheet" href="/src/styles.css" />
   </head>
   <body>
@@ -19,13 +25,14 @@
       <header class="topbar">
         <h1>%GAME_NAME% <span id="puzzle-no" class="muted"></span></h1>
         <div class="topbar-actions">
-          <button id="mode-btn" class="chip mode"></button>
+          <button id="sound-btn" class="icon-btn" aria-label="Sound on" aria-pressed="true"></button>
           <button id="help-btn" class="icon-btn" aria-label="How to play">?</button>
           <button id="stats-btn" class="icon-btn" aria-label="Statistics">
             <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
           </button>
         </div>
       </header>
+      <nav id="modes" class="modes" aria-label="Game mode"></nav>
 
       <aside class="side">
         <section class="hints" aria-label="Hints about the destination">
@@ -42,6 +49,12 @@
       </aside>
 
       <main id="map" class="map">
+        <div class="search">
+          <input id="search" type="search" placeholder="Type a country…" autocomplete="off" autocapitalize="words"
+            spellcheck="false" enterkeyhint="go" aria-label="Type a country to select or guess it" role="combobox"
+            aria-autocomplete="list" aria-expanded="false" aria-controls="search-list" />
+          <ul id="search-list" role="listbox" hidden></ul>
+        </div>
         <div class="map-controls">
           <button id="focus-btn" class="chip">My region</button>
           <button id="world-btn" class="chip">World</button>
@@ -118,12 +131,13 @@
       <h2 id="help-title">How to play %GAME_NAME%</h2>
       <ol class="help">
         <li>Find today's hidden <strong>destination country</strong>. You start from the green country.</li>
-        <li>Tap any country touching your green region, then press <strong>Guess</strong> to add it.</li>
+        <li>Tap any country touching your green region, then press <strong>Guess</strong> to add it. Or type its name in the search box and press Enter twice: once to select it, once to guess.</li>
         <li>Every guess unlocks a new <strong>hint</strong> about the destination. The last hint is a famous landmark.</li>
         <li>Tap a country to compare it with the hints: <span class="ok">✓</span> it shares that fact with the destination, <span class="no">✗</span> it doesn't.</li>
         <li>An orange banner and outline appear when the destination touches one of your countries. The dotted lines on the map are the equator and the tropics.</li>
         <li>Stuck on a hint? Tap <strong>💡 Map</strong> beside it to see every country that fits. It's optional: each hint you look up adds a 💡 to your shared result.</li>
-        <li>Fewer guesses is better. <strong>Par</strong> is the shortest possible route. A new puzzle every midnight (Pacific time).</li>
+        <li>Fewer guesses is better. <strong>Par</strong> is the shortest possible route. Three new puzzles every midnight (Pacific time): <strong>Easy</strong> (par 3–4), <strong>Medium</strong> (5–6) and <strong>Hard</strong> (7–8), each with its own streak.</li>
+        <li>Want to study? <strong>Explore</strong> lets you tap any country to see its language, religion, currency and more.</li>
       </ol>
       <details class="not-in-play">
         <summary>Countries not in play</summary>

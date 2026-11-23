@@ -4,7 +4,7 @@ import { SUPABASE_URL, SUPABASE_ANON_KEY } from '../config/game.config.ts';
 import type { CountryData } from './logic/types.ts';
 
 interface Row {
-  player_id: string; puzzle_number: number; status: 'won' | 'gaveup'; guesses: number; par: number;
+  player_id: string; puzzle_number: number; difficulty?: 'easy' | 'medium' | 'hard'; status: 'won' | 'gaveup'; guesses: number; par: number;
   start: string; target: string; route: string[]; created_at: string;
 }
 
@@ -96,10 +96,15 @@ function table(head: string[], body: string[][]): string {
 function render(rows: Row[]) {
   const wins = rows.filter((r) => r.status === 'won');
   const byPlayer = new Map<string, Row[]>();
-  const byDay = new Map<number, Row[]>();
+  // One row per daily puzzle: day number + difficulty (older rows without one count as medium).
+  const diff = (r: Row) => r.difficulty ?? 'medium';
+  const ORDER = { easy: 0, medium: 1, hard: 2 } as const;
+  const cap = (d: string) => d[0].toUpperCase() + d.slice(1);
+  const byDay = new Map<string, Row[]>();
   for (const r of rows) {
     (byPlayer.get(r.player_id) ?? byPlayer.set(r.player_id, []).get(r.player_id)!).push(r);
-    (byDay.get(r.puzzle_number) ?? byDay.set(r.puzzle_number, []).get(r.puzzle_number)!).push(r);
+    const k = `${r.puzzle_number}|${diff(r)}`;
+    (byDay.get(k) ?? byDay.set(k, []).get(k)!).push(r);
   }
   const winPct = (rs: Row[]) => (rs.length ? `${Math.round((100 * rs.filter((r) => r.status === 'won').length) / rs.length)}%` : '–');
   const winGuesses = (rs: Row[]) => rs.filter((r) => r.status === 'won').map((r) => r.guesses);
@@ -107,7 +112,7 @@ function render(rows: Row[]) {
   const players = [...byPlayer.entries()]
     .map(([id, rs]) => ({ id, rs, last: rs[0].created_at }))
     .sort((a, b) => b.rs.length - a.rs.length || (a.last < b.last ? 1 : -1));
-  const days = [...byDay.entries()].sort((a, b) => b[0] - a[0]);
+  const days = [...byDay.values()].sort((a, b) => b[0].puzzle_number - a[0].puzzle_number || ORDER[diff(a[0])] - ORDER[diff(b[0])]);
 
   root.innerHTML = `
     <div class="bar"><div><h1>Admin</h1><span class="muted">${rows.length} results loaded</span></div>
@@ -126,12 +131,12 @@ function render(rows: Row[]) {
       winPct(p.rs), num(avg(winGuesses(p.rs))), fmtDate(p.last),
     ]))}
     <h2>By puzzle</h2>
-    ${table(['#', 'Destination', 'Par', 'Played', 'Win %', 'Avg guesses'], days.map(([n, rs]) => [
-      String(n), esc(nm(rs[0].target)), String(rs[0].par), String(rs.length), winPct(rs), num(avg(winGuesses(rs))),
+    ${table(['#', 'Difficulty', 'Destination', 'Par', 'Played', 'Win %', 'Avg guesses'], days.map((rs) => [
+      String(rs[0].puzzle_number), cap(diff(rs[0])), esc(nm(rs[0].target)), String(rs[0].par), String(rs.length), winPct(rs), num(avg(winGuesses(rs))),
     ]))}
     <h2>Every result</h2>
-    ${table(['When', 'Player', '#', 'Result', 'Guesses', 'Par', 'Route'], rows.slice(0, 500).map((r) => [
-      fmtDate(r.created_at), `<code>${esc(r.player_id.slice(0, 8))}</code>`, String(r.puzzle_number),
+    ${table(['When', 'Player', '#', 'Difficulty', 'Result', 'Guesses', 'Par', 'Route'], rows.slice(0, 500).map((r) => [
+      fmtDate(r.created_at), `<code>${esc(r.player_id.slice(0, 8))}</code>`, String(r.puzzle_number), cap(diff(r)),
       r.status === 'won' ? '<span class="win">Won</span>' : '<span class="loss">Gave up</span>',
       String(r.guesses), String(r.par),
       `<span class="route">${esc([r.start, ...r.route].map(nm).join(' → '))}</span>`,
@@ -145,9 +150,9 @@ function render(rows: Row[]) {
 
 function downloadCsv(rows: Row[]) {
   const cell = (v: string | number) => `"${String(v).replace(/"/g, '""')}"`;
-  const head = ['created_at', 'player_id', 'puzzle_number', 'status', 'guesses', 'par', 'start', 'target', 'route'];
+  const head = ['created_at', 'player_id', 'puzzle_number', 'difficulty', 'status', 'guesses', 'par', 'start', 'target', 'route'];
   const lines = [head.join(',')].concat(rows.map((r) =>
-    [r.created_at, r.player_id, r.puzzle_number, r.status, r.guesses, r.par, nm(r.start), nm(r.target), r.route.map(nm).join(' > ')].map(cell).join(',')));
+    [r.created_at, r.player_id, r.puzzle_number, r.difficulty ?? 'medium', r.status, r.guesses, r.par, nm(r.start), nm(r.target), r.route.map(nm).join(' > ')].map(cell).join(',')));
   const a = document.createElement('a');
   a.href = URL.createObjectURL(new Blob([lines.join('\n')], { type: 'text/csv' }));
   a.download = 'atlas-trail-results.csv';

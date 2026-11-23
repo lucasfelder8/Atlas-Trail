@@ -51,9 +51,14 @@ export interface CountryData {
   countries: Record<string, Country>;
 }
 
+export type DailyDifficulty = 'easy' | 'medium' | 'hard';
+export const DAILY_ORDER: readonly DailyDifficulty[] = ['easy', 'medium', 'hard'];
+
 export interface Puzzle {
+  /** Day number (1 = launch day); each day has one puzzle per difficulty. */
   number: number;
   date: string;
+  difficulty: DailyDifficulty;
   start: string;
   target: string;
   par: number;
