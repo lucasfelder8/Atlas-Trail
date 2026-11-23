@@ -179,6 +179,22 @@ export function revealedCount(par: number, guessCount: number, gameOver: boolean
   return gameOver ? par : Math.min(par, 1 + guessCount);
 }
 
+// ---------------------------------------------------------------- hint helper
+
+/** Hints that can be shown as a set of countries on the map (everything except the free-text landmark). */
+export const canShowOnMap = (h: Hint) => h.kind !== 'landmark';
+
+/**
+ * Every playable country that fits a hint (the target included), for the "show on map" helper.
+ * Uses the same rule as the info-card check marks, so the map and the cards always agree.
+ */
+export function countriesMatching(hint: Hint, target: Country, ctx: HintContext): string[] {
+  if (!canShowOnMap(hint)) return [];
+  return Object.values(ctx.countries)
+    .filter((c) => c.playable && c.facts && evaluateHint(hint, target, c, ctx).match === true)
+    .map((c) => c.id);
+}
+
 // ---------------------------------------------------------------- card evaluation
 
 /** The selected country's value for a revealed hint, with match against the target. */

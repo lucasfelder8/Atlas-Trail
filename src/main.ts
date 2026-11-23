@@ -7,13 +7,13 @@ import { playableGraph, shortestPath } from './logic/graph.ts';
 import { parGraph } from './logic/par.ts';
 import { visitedSet, tap, targetIsAdjacent } from './logic/legality.ts';
 import { neighbors } from './logic/graph.ts';
-import { buildHints, revealedCount, type Hint, type HintKind } from './logic/hints.ts';
+import { buildHints, revealedCount, canShowOnMap, countriesMatching, type Hint, type HintKind } from './logic/hints.ts';
 import { cardFor, matchLevel } from './logic/infoCard.ts';
-import { shareSquares, shareText } from './logic/scoring.ts';
+import { shareSquares, shareText, HELPER_EMOJI } from './logic/scoring.ts';
 import { laDate, puzzleNumber, msUntilNextPuzzle, formatCountdown } from './logic/daily.ts';
 import { eligibleTargets, pickPuzzle } from './logic/puzzleGen.ts';
 import {
-  applyGuess, giveUp, newGame, recordResult, displayStreak, winRate, averageGuesses,
+  applyGuess, giveUp, useHelper, helperCount, newGame, recordResult, displayStreak, winRate, averageGuesses,
   type GameState, type Stats,
 } from './logic/state.ts';
 import { WorldMap } from './ui/map.ts';
@@ -98,6 +98,9 @@ async function main() {
   let stats: Stats = loadStats();
   let selected: string | null = null;
   let shownHints = -1;
+  /** Hint index currently shown on the map by the helper, or null. */
+  let helperHint: number | null = null;
+  let helperSet: ReadonlySet<string> = new Set();
 
   const over = () => game.status !== 'playing';
   const visited = () => visitedSet(game.start, game.guesses);
@@ -176,7 +179,41 @@ async function main() {
     hideTimer = window.setTimeout(() => { el.hidden = true; el.classList.remove('out'); }, 280);
   }
 
+  // ------------------------------------------------------------ hint helper (optional "easy mode")
+  function startHelper(i: number) {
+    helperHint = i;
+    helperSet = new Set(countriesMatching(hints[i], target, ctx));
+    selected = null;
+    game = useHelper(game, i); // no-op once the game is over: looking afterwards is free
+    persist();
+    render();
+    map.resetZoom(); // show the whole world so every highlighted country is visible
+  }
+  function stopHelper() {
+    if (helperHint === null) return;
+    helperHint = null;
+    helperSet = new Set();
+    render();
+    if (over()) zoomToResult(); else map.zoomTo([...visited(), ...(g.get(game.start) ?? [])]);
+  }
+  /** Tap 💡 on a hint: confirm the first time (it marks the result), then show the matching countries. */
+  function onHelperButton(i: number) {
+    if (helperHint === i) { stopHelper(); return; }
+    if (over()) { startHelper(i); return; } // game finished: free, and the share text is already fixed
+    if (game.helpedHints?.includes(i)) { startHelper(i); return; } // already paid for
+    const n = helperCount(game) + 1;
+    $('helper-cost').textContent = n === 1
+      ? 'Your shared result will get a 💡.'
+      : `You've already used ${n - 1}. Your shared result will get ${n} 💡.`;
+    const dlg = $<HTMLDialogElement>('helper-dlg');
+    dlg.returnValue = '';
+    dlg.showModal();
+    dlg.addEventListener('close', () => { if (dlg.returnValue === 'ok' && !over()) startHelper(i); }, { once: true });
+  }
+
   function finish() {
+    helperHint = null;
+    helperSet = new Set();
     hideReveal();
     if (!practice) { stats = recordResult(stats, game, puzzle.par); saveStats(stats); submitResult(game, puzzle.par); }
     selected = null;
@@ -222,9 +259,19 @@ async function main() {
     if (game.status === 'gaveup') route = parRoute();
     const pinned = [game.start, ...game.guesses.slice(-1), ...(over() ? [game.target] : [])];
     const shades = new Map([...vis].map((id) => [id, matchLevel(data.countries[id], target, revealed, ctx)] as const));
-    map.render({ visited: vis, start: game.start, selected, target: over() ? game.target : null, route, pinned, shades, borderTarget: new Set(nearTarget) });
+    map.render({ visited: vis, start: game.start, selected, target: over() ? game.target : null, route, pinned, shades, borderTarget: new Set(nearTarget), hinted: helperSet });
+    renderHelperBar();
 
     renderCard(vis, revealed);
+  }
+
+  function renderHelperBar() {
+    const bar = $('helper-bar');
+    bar.hidden = helperHint === null;
+    if (bar.hidden) return;
+    $('helper-title').textContent = hints[helperHint!].text;
+    const n = helperSet.size;
+    $('helper-count').textContent = `${n} ${n === 1 ? 'country fits' : 'countries fit'} in yellow · the destination is one of them`;
   }
 
   function renderHints(revealed: Hint[], n: number) {
@@ -232,8 +279,12 @@ async function main() {
     const items = revealed.map((h, i) => {
       const isNew = fresh && i >= shownHints;
       const cls = ['hint', h.kind === 'landmark' ? 'landmark' : '', isNew ? 'new' : '', i === n - 1 ? 'latest' : ''].join(' ');
+      const paid = game.helpedHints?.includes(i);
+      const helper = canShowOnMap(h)
+        ? `<button class="helper-btn${paid ? ' paid' : ''}" title="${paid ? 'You used this lightbulb' : ''}" data-helper="${i}" aria-pressed="${helperHint === i}" aria-label="${helperHint === i ? 'Hide' : 'Show'} countries that fit: ${esc(h.text)}">💡 ${helperHint === i ? 'Hide' : 'Map'}${paid && over() ? ' · used' : ''}</button>`
+        : '';
       return `<li class="${cls}"><span class="ico" aria-hidden="true">${HINT_ICONS[h.kind]}</span>
-        <span class="txt">${hintHtml(h)}</span>${isNew ? '<span class="badge">NEW</span>' : ''}</li>`;
+        <span class="txt">${hintHtml(h)}</span>${isNew ? '<span class="badge">NEW</span>' : ''}${helper}</li>`;
     });
     if (n < puzzle.par) {
       const left = puzzle.par - n;
@@ -242,6 +293,8 @@ async function main() {
         <span class="txt">Your next guess unlocks ${next}${left > 1 ? ` · ${left} to go, landmark last` : ''}</span></li>`);
     }
     $('hint-list').innerHTML = items.join('');
+    for (const b of document.querySelectorAll<HTMLButtonElement>('#hint-list [data-helper]'))
+      b.addEventListener('click', () => onHelperButton(Number(b.dataset.helper)));
     $('hint-count').textContent = `${n} of ${puzzle.par}`;
     const list = $('hint-list');
     if (fresh) list.scrollTop = list.scrollHeight;
@@ -319,7 +372,7 @@ async function main() {
   function showEnd() {
     const won = game.status === 'won';
     const squares = won ? shareSquares(g, game.start, game.target, game.guesses) : [];
-    const text = won ? shareText(practice ? null : number, game.guesses.length, puzzle.par, squares) : '';
+    const text = won ? shareText(practice ? null : number, game.guesses.length, puzzle.par, squares, helperCount(game)) : '';
     const chips = (ids: string[]) => ids.map((id) => `<span class="c${id === game.target ? ' t' : ''}">${esc(nameOf(id))}</span>`).join(' → ');
     const k = game.guesses.length;
     $('end-body').innerHTML = `
@@ -328,7 +381,8 @@ async function main() {
         ? `<b>${k}</b> ${k === 1 ? 'guess' : 'guesses'} · par <b>${puzzle.par}</b>${k < puzzle.par ? ' · under par!' : k === puzzle.par ? ' · perfect route!' : ''}`
         : `The par route was <b>${puzzle.par}</b> guesses:`}</p>
       ${won ? '' : `<div class="end-route">${chips(parRoute())}</div>`}
-      ${won ? `<div class="share-preview" aria-label="Share preview">${squares.join('')}</div>
+      ${won ? `<div class="share-preview" aria-label="Share preview">${squares.join('')}${helperCount(game) ? ` ${HELPER_EMOJI.repeat(helperCount(game))}` : ''}</div>
+        ${helperCount(game) ? `<p class="muted" style="margin:0 0 8px">${HELPER_EMOJI} You looked up ${helperCount(game)} ${helperCount(game) === 1 ? 'hint' : 'hints'} on the map, so your shared result is marked.</p>` : ''}
         <button class="btn" id="share-btn">Share result</button>` : ''}
       ${practice ? '<p class="muted">Practice games don\'t count toward your stats.</p>' : statsHtml() + countdownHtml()}
       <div class="dlg-actions">
@@ -426,6 +480,7 @@ async function main() {
     }, { once: true });
   });
   $('hint-reveal').addEventListener('click', hideReveal);
+  $('helper-close').addEventListener('click', stopHelper);
   $('results-btn').addEventListener('click', showEnd);
   $('new-practice-btn').addEventListener('click', () => openDialog('practice-dlg'));
   $('mode-btn').addEventListener('click', () => {
