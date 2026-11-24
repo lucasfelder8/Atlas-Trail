@@ -386,3 +386,20 @@ body.exploring .card { bottom: 12px; max-height: 46dvh; }
   margin: 6px 0 0; padding: 6px 10px; border-radius: 10px; background: var(--alert-bg); color: var(--alert-text);
   border: 2px solid var(--target); font-weight: 800; font-size: 14px;
 }
+
+/* ---------- end-screen route map ---------- */
+.route-map-wrap { border-radius: 12px; overflow: hidden; margin: 0 0 6px; background: var(--ocean, var(--bg)); }
+.route-map { display: block; }
+.route-map .ocean { fill: var(--ocean, var(--bg)); }
+.route-map .country { transition: none; cursor: default; }
+.route-map .country.on-par { fill: var(--path-soft); stroke: var(--path); stroke-width: 1px; }
+.route-map .rm-par { fill: none; stroke: var(--path); stroke-width: 3px; stroke-dasharray: 2 6; stroke-linecap: round; }
+.route-map .rm-yours { fill: none; stroke: var(--text); stroke-width: 2px; stroke-linejoin: round; stroke-linecap: round; opacity: 0.85; }
+.route-map .rm-dot { fill: var(--text); }
+.route-map .rm-dot.s { fill: var(--path); stroke: var(--surface); stroke-width: 1.5px; }
+.route-map .rm-dot.t { fill: var(--target); stroke: var(--surface); stroke-width: 1.5px; }
+.route-map .rm-labels text { font-size: 11px; font-weight: 800; fill: var(--text); paint-order: stroke; stroke: var(--surface); stroke-width: 3px; }
+.rm-legend { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--muted); margin: 0 0 8px; }
+.rm-legend .lk { display: inline-block; width: 22px; height: 0; border-top: 2px solid var(--text); margin-left: 6px; }
+.rm-legend .lk:first-child { margin-left: 0; }
+.rm-legend .lk.par { border-top: 3px dotted var(--path); }

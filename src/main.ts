@@ -21,7 +21,7 @@ import {
 } from './logic/state.ts';
 import { searchCountries, difficultyOf, LABEL, type SearchHit } from './logic/search.ts';
 import { startExplore } from './explore.ts';
-import { WorldMap } from './ui/map.ts';
+import { WorldMap, drawRouteMap } from './ui/map.ts';
 import { play, setMuted, isMuted } from './ui/sound.ts';
 import { submitResult } from './ui/telemetry.ts';
 import {
@@ -351,6 +351,7 @@ async function main() {
     onTap(h.id);
   }
   searchEl.addEventListener('input', () => {
+    hideReveal(); // typing the next country dismisses the hint popup
     hits = searchCountries(searchEl.value, data.countries, g, visited());
     active = 0;
     renderSearch();
@@ -371,8 +372,7 @@ async function main() {
       if (!hits.length && selected && searchEl.value === nameOf(selected)) {
         const id = selected;
         clearSearch();
-        searchEl.blur(); // drop the phone keyboard so the new hint is visible
-        onGuess(id);
+        onGuess(id); // focus stays in the box so the next country can be typed straight away
         return;
       }
       if (hits[active]) pickHit(hits[active]);
@@ -579,6 +579,8 @@ async function main() {
     $('end-body').innerHTML = `
       <h2 id="end-title">${won ? `You found ${esc(target.name)}! 🎉` : `It was ${esc(target.name)}`}</h2>
       <p class="end-verdict"><b>${k}</b> ${k === 1 ? 'guess' : 'guesses'} · par <b>${puzzle.par}</b> · ${difficultyOf(puzzle.par)}<br><span class="muted">${verdict}</span></p>
+      <div id="route-map" class="route-map-wrap"></div>
+      <div class="rm-legend"><span class="lk yours"></span> Your route <span class="lk par"></span> Par route</div>
       <div class="routes">
         <div class="route-row"><span class="route-label">Your route</span><div class="end-route">${yours}</div></div>
         <div class="route-row"><span class="route-label">Par route</span><div class="end-route">${parChips}</div></div>
@@ -603,6 +605,8 @@ async function main() {
     document.getElementById('end-new-practice')?.addEventListener('click', () => { closeDialog('end-dlg'); openDialog('practice-dlg'); });
     document.getElementById('end-practice')?.addEventListener('click', () => { location.hash = 'practice'; });
     openDialog('end-dlg');
+    // Drawn after opening so it can size itself to the dialog's width.
+    drawRouteMap($('route-map'), topo, data, { start: game.start, target: game.target, yours: [game.start, ...game.guesses], par });
     if (!practice) startCountdown();
   }
 
@@ -708,6 +712,13 @@ async function main() {
   });
   document.addEventListener('keydown', (e) => {
     if (document.querySelector('dialog[open]')) return;
+    // Start typing anywhere: a letter key jumps into the search box (the letter lands there too).
+    const typing = e.target instanceof Element && !!e.target.closest('input, textarea, [contenteditable]');
+    if (!typing && e.key.length === 1 && /\p{L}/u.test(e.key) && !e.ctrlKey && !e.metaKey && !e.altKey) {
+      hideReveal();
+      searchEl.focus();
+      return;
+    }
     if (e.key === 'Escape' && selected) { selected = null; render(); }
     // Enter guesses the selected country (unless a focused button/input will handle Enter itself).
     const onControl = e.target instanceof Element && !!e.target.closest('button, input, textarea, a, summary');

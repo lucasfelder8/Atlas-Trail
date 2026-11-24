@@ -247,3 +247,55 @@ export class WorldMap {
     requestAnimationFrame(step);
   }
 }
+
+// ---------------------------------------------------------------- end-screen route map
+
+export interface RouteMapOptions {
+  start: string;
+  target: string;
+  /** Start plus every guess, in order (ends at the target when won). */
+  yours: string[];
+  /** The par route, start to target. */
+  par: string[];
+}
+
+let routeFeatures: { topo: Topology; fs: Feature<Geometry, { id: string }>[] } | null = null;
+
+/**
+ * Draw a small static map into `container`: your countries in green, the target in orange, and both
+ * routes traced through the countries' label points (yours solid, par dashed). No zoom or taps.
+ */
+export function drawRouteMap(container: HTMLElement, topo: Topology, data: CountryData, o: RouteMapOptions) {
+  if (routeFeatures?.topo !== topo) {
+    const fc = feature(topo, topo.objects.countries as GeometryCollection) as unknown as FeatureCollection<Geometry>;
+    routeFeatures = { topo, fs: fc.features.map((f) => ({ ...f, properties: { id: String(f.id) } })) };
+  }
+  const fs = routeFeatures.fs;
+  const w = container.clientWidth || 340, h = Math.round(Math.min(240, Math.max(170, w * 0.6)));
+  const focus = new Set([...o.yours, ...o.par, o.target]);
+  const fit = { type: 'FeatureCollection', features: fs.filter((f) => focus.has(f.properties.id)) } as FeatureCollection;
+  const projection = geoEqualEarth().fitExtent([[18, 18], [w - 18, h - 18]], fit);
+  const path = geoPath(projection);
+  const yours = new Set(o.yours);
+  const onPar = new Set(o.par);
+  const pt = (id: string) => projection(data.countries[id].label)!;
+  const line = (ids: string[]) => (ids.length > 1 ? `M${ids.map((id) => pt(id).join(',')).join('L')}` : '');
+  const cls = (id: string) => ['country', data.countries[id]?.playable ? 'playable' : 'excluded',
+    id === o.target ? 'target' : yours.has(id) ? 'visited' : '', onPar.has(id) && !yours.has(id) && id !== o.target ? 'on-par' : ''].join(' ');
+
+  const svg = select(container).html('').append('svg')
+    .attr('class', 'route-map').attr('viewBox', `0 0 ${w} ${h}`).attr('width', '100%').attr('height', h)
+    .attr('role', 'img').attr('aria-label', `Map of your route and the par route to ${data.countries[o.target].name}`);
+  svg.append('rect').attr('class', 'ocean').attr('width', w).attr('height', h);
+  svg.append('g').selectAll('path').data(fs).join('path')
+    .attr('d', (f) => path(f) ?? '').attr('class', (f) => cls(f.properties.id));
+  svg.append('path').attr('class', 'rm-par').attr('d', line(o.par));
+  svg.append('path').attr('class', 'rm-yours').attr('d', line(o.yours));
+  svg.append('g').selectAll('circle').data([...new Set([...o.par, ...o.yours])]).join('circle')
+    .attr('class', (id) => (id === o.target ? 'rm-dot t' : id === o.start ? 'rm-dot s' : 'rm-dot'))
+    .attr('cx', (id) => pt(id)[0]).attr('cy', (id) => pt(id)[1]).attr('r', (id) => (id === o.target || id === o.start ? 5 : 3));
+  // Name the start and target only, so the small map stays readable.
+  svg.append('g').attr('class', 'rm-labels').selectAll('text').data([o.start, o.target]).join('text')
+    .attr('x', (id) => pt(id)[0]).attr('y', (id) => pt(id)[1] - 9).attr('text-anchor', 'middle')
+    .text((id) => data.countries[id].name);
+}
